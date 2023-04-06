@@ -1,0 +1,27 @@
+<%- include('./partials/head') %>
+
+    <%- include('./partials/header') %>
+        <main>
+            <div class="div">
+                <% for( let i=0; i < lista.length; i++ ) { %>
+                    <div class="div2">
+                        <div>
+                            <img src="<%= lista[i].imagen %>" alt="imagen" width="100%">
+                        </div>
+                        <div>
+                            <%= lista[i].equipo %>
+                        </div>
+                        <div>
+                            <%= lista[i].año %>
+                        </div>
+                        <div>
+                            <%= lista[i].nombre_de_jugador %>
+                        </div>
+                        <div>
+                            <%= lista[i].versión %>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
