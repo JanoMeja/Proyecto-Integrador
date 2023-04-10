@@ -6,6 +6,18 @@ const productosController = {
             lista: camisetas.lista
         })
 
+    },
+    detalle: function (req, res) {
+        return res.render('detalle-productos', {
+            
+        })
+
+    },
+    aniadir: function (req, res) {
+        return res.render('aniadir-productos', {
+            
+        })
+
     }
 }
 

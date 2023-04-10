@@ -2,93 +2,43 @@ const camisetas = {
     lista: [
         {
             imagen: "/images/dam.jpg",
-            equipo: "Argentina",
-            año: 1990,
-            tipo: "Suplente",
-            versión: "Final Mundial 1990",
-            número_de_camiseta: 10,
-            nombre_de_jugador: "Diego Armando Maradona",
+            descripcion: "Camiseta Argentina 1990 Suplente Final Mundial 1990, Diego Armando Maradona #10",
             id: 1
         }, {
             imagen: "/images/jr.jpg",
-            equipo: "Boca Juniors",
-            año: 2007,
-            tipo: "Titular",
-            versión: "Final Libertadores 2007",
-            número_de_camiseta: 10,
-            nombre_de_jugador: "Juan Roman Riquelme",
+            descripcion: "Camiseta Boca Juniors 2007 Titular Final Libertadores, Juan Roman Riquelme #10",
             id: 2
         }, {
             imagen: "/images/lm.jpg",
-            equipo: "Argentina",
-            año: 2022,
-            tipo: "Titular",
-            versión: "Nueva camiseta 3 estrellas",
-            número_de_camiseta: 10,
-            nombre_de_jugador: "Lionel Andres Messi",
+            descripcion: "Camiseta Argentina 2022 Titular Nueva con 3 estrellas, Lionel Andres Messi #10",
             id: 3
         }, {
             imagen: "/images/rn.jpg",
-            equipo: "Brasil",
-            año: 2002,
-            tipo: "Titular",
-            versión: "Final Mundial 2002",
-            número_de_camiseta: 9,
-            nombre_de_jugador: "Ronaldo Nazario",
+            descripcion: "Camiseta Brasil 2002 Titular Final Mundial 2002, Ronaldo Nazario #9",
             id: 4
         }, {
             imagen: "/images/r.jpg",
-            equipo: "Barcelona",
-            año: 2006,
-            tipo: "Titular",
-            versión: "Final Champions League",
-            número_de_camiseta: 10,
-            nombre_de_jugador: "Ronaldinho",
+            descripcion: "Camiseta Barcelona 2006 Titular Final Champions League, Ronaldinho #10",
             id: 5
         }, {
             imagen: "/images/lm2.jpg",
-            equipo: "Paris Saint-Germain",
-            año: 2021,
-            tipo: "Titular",
-            versión: "Presentación de Messi",
-            número_de_camiseta: 30,
-            nombre_de_jugador: "Lionel Andres Messi",
+            descripcion: "Camiseta Paris Saint-Germain 2021 Titular Presentación de Lionel Andres Messi #30",
             id: 6
         }, {
             imagen: "/images/mp.jpg",
-            equipo: "Boca Juniors",
-            año: 2000,
-            tipo: "Titular",
-            versión: "Final Intercontinental 2000",
-            número_de_camiseta: 9,
-            nombre_de_jugador: "Martin Palermo",
+            descripcion: "Camiseta Boca Juniors 2000 Titular Final Intercontinental 2000, Martin Palermo #9",
             id: 7
         }, {
             imagen: "/images/dam2.jpg",
-            equipo: "Argentinos Juniors",
-            año: 1976,
-            tipo: "Titular",
-            versión: "Debut de Maradona en el fútbol profesional",
-            número_de_camiseta: 16,
-            nombre_de_jugador: "Diego Armando Maradona",
+            descripcion: "Camiseta Argentinos Juniors 1976 Titular Debut de Maradona en el fútbol profesional, Diego Armando Maradona #16",
             id: 8
         }, {
             imagen: "/images/zz.jpg",
-            equipo: "Francia",
-            año: 2006,
-            tipo: "Suplente",
-            versión: "Final Mundial 2006",
-            número_de_camiseta: 10,
-            nombre_de_jugador: "Zinedine Zidane",
+            descripcion: "Camiseta Francia 2006 Suplente Final Mundial 2006, Zinedine Zidane #10",
             id: 9
         }, {
             imagen: "/images/dm.jpg",
-            equipo: "Inter de Milán",
-            año: 2010,
-            tipo: "Titular",
-            versión: "Final Champions League 2010",
-            número_de_camiseta: 22,
-            nombre_de_jugador: "Diego Alberto Milito",
+            descripcion: "Camiseta Inter de Milán 2010 Titular Final Champions League 2010, Diego Alberto Milito #22",
             id: 10
         },
     ]
