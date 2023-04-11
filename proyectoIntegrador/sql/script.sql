@@ -1,24 +1,28 @@
+/* crear el schema y usarlo */
+CREATE SCHEMA proyecto;
+USE proyecto;
+
 /* tabla usuarios */
-create table usuarios (
+CREATE TABLE usuarios (
 -- nombre        tipo         restriccion
-id               int         unsigned primary key  auto_increment,
-email            varchar(200)    not null,
-contraseña       varchar(150)   not null,
-foto_de_perfil   varchar(500)   not null,
-fecha            date,
-dni              int            unsigned unique not null,
+id               INT         UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+email            VARCHAR(200)   NOT NULL,
+contraseña       VARCHAR(150)   NOT NULL,
+foto_de_perfil   VARCHAR(500)   NOT NULL,
+fecha            DATE           NOT NULL,
+dni              INT            UNSIGNED UNIQUE NOT NULL,
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 
 /* tabla productos */
-create table productos (
+CREATE TABLE productos (
 -- nombre        tipo         restriccion          
-id              int           unsigned primary key  auto_increment,
-user_id         int           unsigned not null,  
-nombre          varchar(250)  not null,
-descrpcion      varchar(2000)  not null,
+id              INT           UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+user_id         INT           UNSIGNED NOT NULL,  
+nombre          VARCHAR(250)  NOT NULL,
+descrpcion      VARCHAR(2000) NOT NULL,
 
 FOREIGN KEY (user_id)  REFERENCES usuarios(id),
 
@@ -28,7 +32,7 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 
 
 /* tabla comentarios */
-create table comentarios (
+CREATE TABLE comentarios (
 -- nombre        tipo         restriccion
 id               int          unsigned primary key auto_increment,
 id_post          int          unsigned not null,
