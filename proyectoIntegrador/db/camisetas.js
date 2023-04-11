@@ -16,7 +16,8 @@ const camisetas = {
             imagen: "/images/rn.jpg",
             descripcion: "Camiseta Brasil 2002 Titular Final Mundial 2002, Ronaldo Nazario #9",
             id: 4
-        }, {
+        }, 
+        {
             imagen: "/images/r.jpg",
             descripcion: "Camiseta Barcelona 2006 Titular Final Champions League, Ronaldinho #10",
             id: 5
