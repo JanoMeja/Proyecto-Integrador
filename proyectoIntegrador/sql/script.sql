@@ -34,10 +34,10 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 /* tabla comentarios */
 CREATE TABLE comentarios (
 -- nombre        tipo         restriccion
-id               int          unsigned primary key auto_increment,
-id_post          int          unsigned not null,
-id_usuario       int          unsigned not null,
-comentarios      varchar(5000) not null, 
+id               INT          UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+id_post          INT          UNSIGNED NOT NULL,
+id_usuario       INT          UNSIGNED NOT NULL,
+comentarios      VARCHAR(5000) NOT NULL, 
 
 FOREIGN KEY (id_usuario)  REFERENCES usuarios(id),
 FOREIGN KEY (id_post)  REFERENCES productos(id),
