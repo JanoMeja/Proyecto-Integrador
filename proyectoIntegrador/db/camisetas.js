@@ -1,5 +1,5 @@
 const camisetas = {
-    lista: [
+    productos: [
         {
             imagen: "/images/dam.jpg",
             descripcion: "Camiseta Argentina 1990 Suplente Final Mundial 1990, Diego Armando Maradona #10",
@@ -41,7 +41,41 @@ const camisetas = {
             descripcion: "Camiseta Inter de Milán 2010 Titular Final Champions League 2010, Diego Alberto Milito #22",
             id: 10
         },
+    ],
+    usuario: [{
+        nombre: "Pulpo Gonzalez",
+        email: "pulpito23@gmail.com",
+        foto_perfil: "/images/perfil.jpg"
+    },
+    ],
+    comentarios: [{
+        nombre_de_usuario: "Agustin Carman:",
+        foto_perfil: "/images/perfil.jpg",
+        texto: "Insolito como nos afanaron esa final. Gran Camiseta!"
+    },
+    {
+        nombre_de_usuario: "Colo:",
+        foto_perfil: "/images/perfil.jpg",
+        texto: "Me hace acordar al 2014. Que pesadella."
+    },
+    {
+        nombre_de_usuario: "Jano Meja:",
+        foto_perfil: "/images/perfil.jpg",
+        texto: "Una giornatta tristissima."
+    },
+    {
+        nombre_de_usuario: "Juanita Cazares:",
+        foto_perfil: "/images/perfil.jpg",
+        texto: "UFFF que buena que esta!",
+    },
+    {
+        nombre_de_usuario: "Pulpo Gonzalez:",
+        foto_perfil: "/images/perfil.jpg",
+        texto: "Damela SIEMPRE!",
+    },
     ]
-}
+};
+
+
 
 module.exports = camisetas;

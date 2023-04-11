@@ -6,7 +6,7 @@
             <div class="d-flex align-items-center">
                 <h2 class="products-title">Camiseta Argentina Maradona</h2>
                 <p class="product-detail-description">
-                    <a href="/productos/profile-edit">Editar</a>
+                    <a href="/productos/aniadir-productos">Editar</a>
                 </p>
             </div>
             <div class="product-detail">
@@ -18,69 +18,28 @@
                             lamentablemente Argentina sufrio la derrotada ante Alemania por 1-0 </p>
                     </article>
                     <div class="col-12 col-lg-4">
-                        <section class="comments">
-                            <article>
-                                <img src="https://via.placeholder.com/35" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                        <strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-                                        Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti
-                                        suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis
-                                        labore. Fugit ipsa mollitia odit inventore consequuntur.
-                                    </p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://via.placeholder.com/35" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                        <strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-                                        Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet
-                                        consectetur.
-                                    </p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://via.placeholder.com/35" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                        <strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-                                        Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit.
-                                    </p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://via.placeholder.com/35" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                        <strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-                                        Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.
-                                    </p>
-                                </div>
-                            </article>
-                            <article>
-                                <img src="https://via.placeholder.com/35" alt="">
-                                <div class="data">
-                                    <p class="user">
-                                        <strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-                                        Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit.
-                                        Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore
-                                    </p>
-                                </div>
-                            </article>
-
-                        </section>
-                        <form class="form" action="" method="POST">
-                            <input class="form-input" type="text" value="" placeholder="Agregar comentario">
-                            <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                        </form>
-                        <hr>
+                        <% for( let i=0; i < lista.length; i++ ) { %>
+                            <section class="comments">
+                                <article>
+                                    <img src="<%= lista[i].foto_perfil %>" alt="">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="profile.html"><%= lista[i].nombre_de_usuario %></a> </strong>
+                                            <%= lista[i].texto %>
+                                        </p>
+                                    </div>
+                                </article>
+                            </section>
+                            <% } %>
+                                <form class="form" action="" method="POST">
+                                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                                </form>
+                                <hr>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- /product detail -->
         <%- include('./partials/footer') %>
