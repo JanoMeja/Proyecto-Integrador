@@ -41,3 +41,10 @@ FOREIGN KEY (id_post)  REFERENCES productos(id),
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+
+/* 5 usuarios */
+
+/* 10 posteos */
+
+/* 4 comentarios */
