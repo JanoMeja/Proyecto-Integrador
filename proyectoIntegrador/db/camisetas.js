@@ -42,12 +42,11 @@ const camisetas = {
             id: 10
         },
     ],
-    usuario: [{
+    usuario: {
         nombre: "Pulpo Gonzalez",
         email: "pulpito23@gmail.com",
         foto_perfil: "/images/perfil.jpg"
     },
-    ],
     comentarios: [{
         nombre_de_usuario: "Agustin Carman:",
         foto_perfil: "/images/perfil.jpg",
