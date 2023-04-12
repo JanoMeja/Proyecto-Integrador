@@ -1,4 +1,4 @@
-const camisetas = require('../db/camisetas')
+const camisetas = require('../db/camisetas');
 
 const productosController = {
     index: function (req, res) {
@@ -21,6 +21,6 @@ const productosController = {
         })
 
     }
-}
+};
 
 module.exports = productosController;

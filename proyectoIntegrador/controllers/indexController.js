@@ -1,4 +1,4 @@
-const camisetas = require('../db/camisetas')
+const camisetas = require('../db/camisetas');
 
 const indexController = {
     index:function(req, res, next) {

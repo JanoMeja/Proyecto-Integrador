@@ -1,4 +1,4 @@
-const camisetas = require('../db/camisetas')
+const camisetas = require('../db/camisetas');
 
 
 const userController = {
@@ -27,6 +27,6 @@ const userController = {
         })
 
     }
-}
+};
 
 module.exports = userController;
