@@ -22,26 +22,26 @@
                             </a>
                         </section>
                     </div>
-                <% } %>
-                <div class="col-12">
-                    <h2 class="products-title">Mas Comentadas</h2>
-                </div>
-                <% for( let i=5; i < 10; i++ ) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class="product-box">
-                            <a href="/productos/detalle-productos">
-                                <figure class="product-box_image">
-                                    <img src="<%= lista[i].imagen %>" alt="imagen" width="100%" class="tamano">
-                                </figure>
-                                <article class="product-box_data">
-                                    <h3 class="text">
-                                        <%= lista[i].descripcion %>
-                                    </h3>
-                                </article>
-                            </a>
-                        </section>
-                    </div>
-                <% } %>
+                    <% } %>
+                        <div class="col-12">
+                            <h2 class="products-title">Mas Comentadas</h2>
+                        </div>
+                        <% for( let i=5; i < 10; i++ ) { %>
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <section class="product-box">
+                                    <a href="/productos/detalle-productos">
+                                        <figure class="product-box_image">
+                                            <img src="<%= lista[i].imagen %>" alt="imagen" width="100%" class="tamano">
+                                        </figure>
+                                        <article class="product-box_data">
+                                            <h3 class="text">
+                                                <%= lista[i].descripcion %>
+                                            </h3>
+                                        </article>
+                                    </a>
+                                </section>
+                            </div>
+                            <% } %>
             </div>
         </div>
         <%- include('./partials/footer') %>

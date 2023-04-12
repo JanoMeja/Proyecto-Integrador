@@ -11,14 +11,13 @@ const productosController = {
     detalle: function (req, res) {
         return res.render('detalle-productos', {
             lista: camisetas.comentarios,
-            usuarios: camisetas.usuario
         })
 
     },
     aniadir: function (req, res) {
         return res.render('aniadir-productos', {
             lista: camisetas.productos,
-            usuarios: camisetas.usuario
+            usuario: camisetas.usuario
         })
 
     }
