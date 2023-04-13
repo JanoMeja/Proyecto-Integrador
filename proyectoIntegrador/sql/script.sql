@@ -21,7 +21,7 @@ create table productos (
 id              int           unsigned primary key  auto_increment,
 user_id         int           unsigned not null,  
 nombre          varchar(250)  not null,
-descripcion      varchar(2000)  not null,
+descripcion      varchar(500)  not null,
 
 FOREIGN KEY (user_id)  REFERENCES usuarios(id),
 
@@ -35,7 +35,7 @@ create table comentarios (
 id               int          unsigned primary key auto_increment,
 id_post          int          unsigned not null,
 id_usuario       int          unsigned not null,
-comentarios      varchar(5000) not null, 
+comentarios      varchar(500) not null, 
 
 FOREIGN KEY (id_usuario)  REFERENCES usuarios(id),
 FOREIGN KEY (id_post)  REFERENCES productos(id),
