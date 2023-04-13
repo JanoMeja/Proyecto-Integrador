@@ -98,3 +98,13 @@ INSERT INTO comentarios  VALUES (default, 6, 6, 'Tienen envio?', default, defaul
 INSERT INTO comentarios  VALUES (default, 6, 4, 'Algun descuento?', default, default);
 INSERT INTO comentarios  VALUES (default, 7, 1, 'Aceptan mercado pago?', default, default);
 INSERT INTO comentarios  VALUES (default, 7, 7, 'Que equipazo ese', default, default);
+INSERT INTO comentarios  VALUES (default, 7, 6, 'Mi remera favorita', default, default);
+INSERT INTO comentarios  VALUES (default, 7, 5, 'Shorts venden?', default, default);
+INSERT INTO comentarios  VALUES (default, 8, 1, 'Inigualable', default, default);
+INSERT INTO comentarios  VALUES (default, 8, 3, 'Mucha mistica', default, default);
+INSERT INTO comentarios  VALUES (default, 8, 5, 'Jugadorazo', default, default);
+INSERT INTO comentarios  VALUES (default, 8, 4, 'La calida de esa remera por dios', default, default);
+INSERT INTO comentarios  VALUES (default, 9, 3, 'Mi equipo', default, default);
+INSERT INTO comentarios  VALUES (default, 9, 5, 'Damela siempre', default, default);
+INSERT INTO comentarios  VALUES (default, 9, 2, 'Se puede buscar por la oficina?', default, default);
+INSERT INTO comentarios  VALUES (default, 9, 1, 'Muy bueno todo', default, default);
