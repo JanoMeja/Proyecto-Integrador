@@ -70,13 +70,13 @@ INSERT INTO productos  VALUES (default,9,'Camiseta Retro Argentina 86 Azul Marad
 INSERT INTO productos  VALUES (default,10,'Camiseta Argentina Aimar Retro', 'Camiseta con ;a dorsal 10 de Pablo Aimar con Tela Poliéster','', default, default);
 
 
-/* 4 comentarios */
+/* 40 comentarios */
 
 INSERT INTO comentarios  VALUES (default, 1, 3, 'Muy buen produto', default, default);
 INSERT INTO comentarios  VALUES (default, 3, 2,'No me gusta que tengan camisetas alternativas del club', default, default);
 INSERT INTO comentarios  VALUES (default, 4, 3,'Muy bueno',  default, default);
-INSERT INTO comentarios  VALUES (default, 5,4,'Hermosas camisetas',  default, default);
-INSERT INTO comentarios  VALUES (default, 2, 4, 'tremenda la camiseta', default, default);
+INSERT INTO comentarios  VALUES (default, 5, 4,'Hermosas camisetas',  default, default);
+INSERT INTO comentarios  VALUES (default, 2, 4, 'Tremenda la camiseta', default, default);
 INSERT INTO comentarios  VALUES (default, 1, 2, 'Calidad increible', default, default);
 INSERT INTO comentarios  VALUES (default, 1, 1, 'Awanteeee bocaaaa', default, default);
 INSERT INTO comentarios  VALUES (default, 1, 5, 'Que equipazo ese!', default, default);
@@ -86,7 +86,7 @@ INSERT INTO comentarios  VALUES (default, 2, 1, 'Tremenda camiseta, idolos!', de
 INSERT INTO comentarios  VALUES (default, 3, 1, 'Awante river', default, default);
 INSERT INTO comentarios  VALUES (default, 3, 5, 'Increible, saludos a la marca', default, default);
 INSERT INTO comentarios  VALUES (default, 3, 6, 'Son mis idolos', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 5, 'me recomendaron la marca, esta todo muy bueno', default, default);
+INSERT INTO comentarios  VALUES (default, 4, 5, 'Me recomendaron la marca, esta todo muy bueno', default, default);
 INSERT INTO comentarios  VALUES (default, 4, 6, 'Increible pagina web se mandaron', default, default);
 INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorazo', default, default);
 INSERT INTO comentarios  VALUES (default, 5, 3, 'Top', default, default);
