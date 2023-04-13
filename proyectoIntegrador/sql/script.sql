@@ -88,11 +88,7 @@ INSERT INTO comentarios  VALUES (default, 3, 5, 'Increible, saludos a la marca',
 INSERT INTO comentarios  VALUES (default, 3, 6, 'Son mis idolos', default, default);
 INSERT INTO comentarios  VALUES (default, 4, 5, 'me recomendaron la marca, esta todo muy bueno', default, default);
 INSERT INTO comentarios  VALUES (default, 4, 6, 'Increible pagina web se mandaron', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorqzo', default, default);
-
-
-
-/*   id              
-id_post         
-id_usuario      
-comentarios  */
+INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorazo', default, default);
+INSERT INTO comentarios  VALUES (default, 5, 3, 'Top', default, default);
+INSERT INTO comentarios  VALUES (default, 5, 2, 'Mi favorita', default, default);
+INSERT INTO comentarios  VALUES (default, 5, 5, 'Que viva el futbol', default, default);
