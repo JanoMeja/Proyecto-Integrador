@@ -1,44 +1,41 @@
-/* crear el schema y usarlo */
+-- crear el schema y usarlo
 CREATE SCHEMA proyecto;
 USE proyecto;
 
-/* tabla usuarios */
-CREATE TABLE usuarios (
--- nombre        tipo         restriccion
-id               INT         UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-email            VARCHAR(200)   NOT NULL,
-contraseña       VARCHAR(150)   NOT NULL,
-foto_de_perfil   VARCHAR(500)   NOT NULL,
-fecha            DATE           NOT NULL,
-dni              INT            UNSIGNED UNIQUE NOT NULL,
+-- tabla usario
+create table usuarios (
+-- nombre        tipo         restriccion  
+id               int         unsigned primary key  auto_increment,
+email            varchar(200)    not null,
+contraseña       varchar(150)   not null,
+foto_de_perfil   varchar(500)    null,
+fecha            date,
+dni              int            not null,
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-
-/* tabla productos */
+-- tabla productos
 create table productos (
--- nombre        tipo         restriccion          
+-- nombre        tipo         restriccion           
 id              int           unsigned primary key  auto_increment,
 user_id         int           unsigned not null,  
 nombre          varchar(250)  not null,
-descrpcion      varchar(500)  not null,
-fotoProducto 	varchar(150)  not null,
+descripcion      varchar(2000)  not null,
+
 FOREIGN KEY (user_id)  REFERENCES usuarios(id),
 
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-
-
-/* tabla comentarios */
-CREATE TABLE comentarios (
--- nombre        tipo         restriccion
-id               INT          UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-id_post          INT          UNSIGNED NOT NULL,
-id_usuario       INT          UNSIGNED NOT NULL,
-comentarios      text         NOT NULL, 
+-- tabla comentarios
+create table comentarios (
+-- nombre        tipo         restriccion  
+id               int          unsigned primary key auto_increment,
+id_post          int          unsigned not null,
+id_usuario       int          unsigned not null,
+comentarios      varchar(5000) not null, 
 
 FOREIGN KEY (id_usuario)  REFERENCES usuarios(id),
 FOREIGN KEY (id_post)  REFERENCES productos(id),
@@ -46,69 +43,64 @@ FOREIGN KEY (id_post)  REFERENCES productos(id),
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+ 
+ -- usarios
+ INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni)  VALUES (default, 'aguscarmanp@gmail.com', 'Agus0506', '', '2000-02-22', '42372582');
+ INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni)  VALUES (default, 'esuarez@gmail.com', 'SuarezLuis12', '', '2023-04-06', '45293032');
+ INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni) VALUES (default, 'janomeja@gmail.com', 'Janocrack', '', '2023-07-10', '45234321');
+ INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni) VALUES (default, 'juanitocazares@gmail.com', 'Jcazares2112', '', '2002-01-02', '43565071');
+ INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni)  VALUES (default, 'pulpogonzales@gmail.com', 'Ggonzales', '', '2021-02-04', '46738405');
+ 
+-- posteos
+INSERT INTO productos (id, user_id, nombre, descripcion) VALUES (default,1,'Argentina Primera Camisetas Retro Futbol 1978', "Camisa muy linda y significativa");
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,2, 'CAMISETA DE FUTBOL RETRO DE RIVER 1975', 'camisa de river vintage hecha con tela de calidad');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,3,'Camiseta Napoli Buitoni Maradona Titular Retro', 'Cosida a Mano y cuenta con Algodón Premium.');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,4,'Camiseta Argentina Scaloni Retro', 'camiseta de scaloni en sus ul');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,5,'Camiseta Argentina 86 Maradona Retro Campeón México 1986', 'Impresionante re-edición Argentina 1986, la que uso Diego Armando Maradona para traer el titulo de México 1986 a nuestro país Versión TITULAR');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,1,'Camiseta De Futbol Retro Vintage Del Rojo De Avellaneda ', 'CAMISETA DE FUTBOL RETRO DE INDEPENDIENTE 1934/1935,La mejor casaca Vintage del Diablo Rojo de Avellaneda');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,2,'Camiseta Boca 81 Maradona Titular Retro', 'Camiseta de Diego Armando MAradona titular de Boca Juniors');
+INSERT INTO productos (id, user_id, nombre, descripcion) VALUES (default,3,'Conjunto Retro Cruyff Holanda 1974 ', 'Conjunto de Holanda, la camiseta puede ir con o sin el nombre, tu propio nombre con el numero que quieras. Solo tenes que aclarar después de hacer la compra.');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,4,'Camiseta Retro Argentina 86 Azul Maradona Mano De Dios #10', 'Espectacular camiseta retro Selección Argentina alternativa 1986, la del gol del siglo y la mano contra los ingleses. Lleváte este pedazo de historia.Confeccionada en poliéster azul a bastones bi tono, escudo y logo bordado, número 10 en vinilo termotransferible.');
+INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,5,'Camiseta Argentina Aimar Retro', 'Camiseta con la dorsal 10 de Pablo Aimar con Tela Poliéster');
 
-
-/* 5 usuarios */
-
- INSERT INTO usuarios  VALUES (default, 'aguscarmanp@gmail.com', 'Agus0506', '', '06-05-2023', '42372582', default, default );
- INSERT INTO usuarios  VALUES (default, 'esuarez@gmail.com', 'SuarezLuis12', '', '10-09-2023', '45293032',default, default );
- INSERT INTO usuarios  VALUES (default, 'janomeja@gmail.com', 'Janocrack', '', '12-12-2023', '45234321', default, default );
- INSERT INTO usuarios  VALUES (default, 'juanitocazares@gmail.com', 'Jcazares2112', '', '02-08-2023', '43565071', default, default );
- INSERT INTO usuarios  VALUES (default, 'pulpogonzales@gmail.com', 'Ggonzales', '', '11-04-2022', '46738405', default, default );
-
-/* 10 posteos */
-
-INSERT INTO productos VALUES (default,1,'Argentina Primera Camisetas Retro Futbol 1978', "Camisa muy linda y significativa", "", default, default);
-INSERT INTO productos  VALUES (default,2, 'CAMISETA DE FUTBOL RETRO DE RIVER 1975', 'camisa de river vintage hecha con tela de calidad',"",default, default);
-INSERT INTO productos  VALUES (default,3,'Camiseta Napoli Buitoni Maradona Titular Retro', 'Cosida a Mano y cuenta con Algodón Premium.','', default, default);
-INSERT INTO productos  VALUES (default,4,'Camiseta Argentina Scaloni Retro', 'camiseta de scaloni en sus ul',"", default, default);
-INSERT INTO productos  VALUES (default,5,'Camiseta Argentina 86 Maradona Retro Campeón México 1986', 'Impresionante re-edición Argentina 1986, la que uso Diego Armando Maradona para traer el titulo de México 1986 a nuestro país Versión TITULAR', "",default, default);
-INSERT INTO productos  VALUES (default,6,'Camiseta De Futbol Retro Vintage Del Rojo De Avellaneda ', 'CAMISETA DE FUTBOL RETRO DE INDEPENDIENTE 1934/1935,La mejor casaca Vintage del Diablo Rojo de Avellaneda',"", default, default);
-INSERT INTO productos  VALUES (default,7,'Camiseta Boca 81 Maradona Titular Retro', 'Camiseta de Diego Armando MAradona titular de Boca Juniors','', default, default);
-INSERT INTO productos  VALUES (default,8,'Conjunto Retro Cruyff Holanda 1974 ', 'Conjunto de Holanda, la camiseta puede ir con o sin el nombre, tu propio nombre con el numero que quieras. Solo tenes que aclarar después de hacer la compra.','', default, default);
-INSERT INTO productos  VALUES (default,9,'Camiseta Retro Argentina 86 Azul Maradona Mano De Dios #10', 'Espectacular camiseta retro Selección Argentina alternativa 1986, la del gol del siglo y la mano contra los ingleses. Lleváte este pedazo de historia.Confeccionada en poliéster azul a bastones bi tono, escudo y logo bordado, número 10 en vinilo termotransferible.','', default, default);
-INSERT INTO productos  VALUES (default,10,'Camiseta Argentina Aimar Retro', 'Camiseta con ;a dorsal 10 de Pablo Aimar con Tela Poliéster','', default, default);
-
-
-/* 40 comentarios */
-
-INSERT INTO comentarios  VALUES (default, 1, 3, 'Muy buen produto', default, default);
-INSERT INTO comentarios  VALUES (default, 3, 2,'No me gusta que tengan camisetas alternativas del club', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 3,'Muy bueno',  default, default);
-INSERT INTO comentarios  VALUES (default, 5, 4,'Hermosas camisetas',  default, default);
-INSERT INTO comentarios  VALUES (default, 2, 4, 'Tremenda la camiseta', default, default);
-INSERT INTO comentarios  VALUES (default, 1, 2, 'Calidad increible', default, default);
-INSERT INTO comentarios  VALUES (default, 1, 1, 'Awanteeee bocaaaa', default, default);
-INSERT INTO comentarios  VALUES (default, 1, 5, 'Que equipazo ese!', default, default);
-INSERT INTO comentarios  VALUES (default, 2, 3, 'Que viva el futbol', default, default);
-INSERT INTO comentarios  VALUES (default, 2, 2, 'Increible todo', default, default);
-INSERT INTO comentarios  VALUES (default, 2, 1, 'Tremenda camiseta, idolos!', default, default);
-INSERT INTO comentarios  VALUES (default, 3, 1, 'Awante river', default, default);
-INSERT INTO comentarios  VALUES (default, 3, 5, 'Increible, saludos a la marca', default, default);
-INSERT INTO comentarios  VALUES (default, 3, 6, 'Son mis idolos', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 5, 'Me recomendaron la marca, esta todo muy bueno', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 6, 'Increible pagina web se mandaron', default, default);
-INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorazo', default, default);
-INSERT INTO comentarios  VALUES (default, 5, 3, 'Top', default, default);
-INSERT INTO comentarios  VALUES (default, 5, 2, 'Mi favorita', default, default);
-INSERT INTO comentarios  VALUES (default, 5, 5, 'Que viva el futbol', default, default);
-INSERT INTO comentarios  VALUES (default, 6, 3, 'Muy bueno', default, default);
-INSERT INTO comentarios  VALUES (default, 6, 1, 'Lo quiero ya', default, default);
-INSERT INTO comentarios  VALUES (default, 6, 6, 'Tienen envio?', default, default);
-INSERT INTO comentarios  VALUES (default, 6, 4, 'Algun descuento?', default, default);
-INSERT INTO comentarios  VALUES (default, 7, 1, 'Aceptan mercado pago?', default, default);
-INSERT INTO comentarios  VALUES (default, 7, 7, 'Que equipazo ese', default, default);
-INSERT INTO comentarios  VALUES (default, 7, 6, 'Mi remera favorita', default, default);
-INSERT INTO comentarios  VALUES (default, 7, 5, 'Shorts venden?', default, default);
-INSERT INTO comentarios  VALUES (default, 8, 1, 'Inigualable', default, default);
-INSERT INTO comentarios  VALUES (default, 8, 3, 'Mucha mistica', default, default);
-INSERT INTO comentarios  VALUES (default, 8, 5, 'Jugadorazo', default, default);
-INSERT INTO comentarios  VALUES (default, 8, 4, 'La calida de esa remera por dios', default, default);
-INSERT INTO comentarios  VALUES (default, 9, 3, 'Mi equipo', default, default);
-INSERT INTO comentarios  VALUES (default, 9, 5, 'Damela siempre', default, default);
-INSERT INTO comentarios  VALUES (default, 9, 2, 'Se puede buscar por la oficina?', default, default);
-INSERT INTO comentarios  VALUES (default, 9, 1, 'Muy bueno todo', default, default);
-INSERT INTO comentarios  VALUES (default, 10, 5, 'La quiero para mi novia', default, default);
-INSERT INTO comentarios  VALUES (default, 10, 6, 'Llega antes del viernes?', default, default);
-INSERT INTO comentarios  VALUES (default, 10, 4, 'La amo', default, default);
-INSERT INTO comentarios  VALUES (default, 10, 3, 'No me convence', default, default);
+-- comentarios
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 1, 'Muy buen produto');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 2,'No me gusta que tengan camisetas alternativas del club');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 2, 3,'Muy bueno');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 3, 4,'Hermosas camisetas');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 4, 5, 'Tremenda la camiseta');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 5, 1, 'Calidad increible');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 6, 2, 'Awanteeee bocaaaa');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 7, 3, 'Que equipazo ese!');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 8, 4, 'Que viva el futbol');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 9, 5, 'Increible todo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 10, 1, 'Tremenda camiseta, idolos!');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 2, 'Awante river');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 2, 3, 'Increible, saludos a la marca');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 3, 4, 'Son mis idolos');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 4, 5, 'Me recomendaron la marca, esta todo muy bueno');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 5, 1, 'Increible pagina web se mandaron');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 6, 2, 'Que jugadorazo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 7, 3, 'Top');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 8, 4, 'Mi favorita');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 9, 5, 'Que viva el futbol');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 10, 1, 'Muy bueno');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 2, 'Lo quiero ya');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 2, 3, 'Tienen envio?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 3, 4, 'Algun descuento?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 4, 5, 'Aceptan mercado pago?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 5, 1, 'Que equipazo ese');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 6, 2, 'Mi remera favorita');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 7, 3, 'Shorts venden?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 8, 4, 'Inigualable');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 9, 5, 'Mucha mistica');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 10, 1, 'Jugadorazo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 2, 'La calida de esa remera por dios');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 2, 3, 'Mi equipo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 3, 4, 'Damela siempre');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 4, 5, 'Se puede buscar por la oficina?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 5, 1, 'Muy bueno todo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 6, 2, 'La quiero para mi novia');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 7, 3, 'Llega antes del viernes?');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 8, 4, 'La amo');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 9, 5, 'No me convence');
