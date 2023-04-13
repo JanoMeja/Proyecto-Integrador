@@ -65,7 +65,7 @@ INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,5,'Cam
 
 -- comentarios
 INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 1, 'Muy buen produto');
-INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 2,'No me gusta que tengan camisetas alternativas del club');
+INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 10, 2,'No me gusta que tengan camisetas alternativas del club');
 INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 2, 3,'Muy bueno');
 INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 3, 4,'Hermosas camisetas');
 INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 4, 5, 'Tremenda la camiseta');
