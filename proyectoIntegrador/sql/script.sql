@@ -108,3 +108,7 @@ INSERT INTO comentarios  VALUES (default, 9, 3, 'Mi equipo', default, default);
 INSERT INTO comentarios  VALUES (default, 9, 5, 'Damela siempre', default, default);
 INSERT INTO comentarios  VALUES (default, 9, 2, 'Se puede buscar por la oficina?', default, default);
 INSERT INTO comentarios  VALUES (default, 9, 1, 'Muy bueno todo', default, default);
+INSERT INTO comentarios  VALUES (default, 10, 5, 'La quiero para mi novia', default, default);
+INSERT INTO comentarios  VALUES (default, 10, 6, 'Llega antes del viernes?', default, default);
+INSERT INTO comentarios  VALUES (default, 10, 4, 'La amo', default, default);
+INSERT INTO comentarios  VALUES (default, 10, 3, 'No me convence', default, default);
