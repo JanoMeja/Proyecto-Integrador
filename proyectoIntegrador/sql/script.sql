@@ -72,7 +72,27 @@ INSERT INTO productos  VALUES (default,10,'Camiseta Argentina Aimar Retro', 'Cam
 
 /* 4 comentarios */
 
-INSERT INTO comentarios (comentarios,id_usuario, id_post) VALUES (default, 1, 3, 'Muy buen produto', default, default);
-INSERT INTO comentarios (comentarios,id_usuario, id_post) VALUES (default, 3, 2,'No me gusta que tengan camisetas alternativas del club', default, default);
-INSERT INTO comentarios (comentarios,id_usuario, id_post) VALUES (default, 4, 3,'Muy bueno',  default, default);
-INSERT INTO comentarios (comentarios,id_usuario, id_post) VALUES (default, 5,4,'Hermosas camisetas',  default, default);
+INSERT INTO comentarios  VALUES (default, 1, 3, 'Muy buen produto', default, default);
+INSERT INTO comentarios  VALUES (default, 3, 2,'No me gusta que tengan camisetas alternativas del club', default, default);
+INSERT INTO comentarios  VALUES (default, 4, 3,'Muy bueno',  default, default);
+INSERT INTO comentarios  VALUES (default, 5,4,'Hermosas camisetas',  default, default);
+INSERT INTO comentarios  VALUES (default, 2, 4, 'tremenda la camiseta', default, default);
+INSERT INTO comentarios  VALUES (default, 1, 2, 'Calidad increible', default, default);
+INSERT INTO comentarios  VALUES (default, 1, 1, 'Awanteeee bocaaaa', default, default);
+INSERT INTO comentarios  VALUES (default, 1, 5, 'Que equipazo ese!', default, default);
+INSERT INTO comentarios  VALUES (default, 2, 3, 'Que viva el futbol', default, default);
+INSERT INTO comentarios  VALUES (default, 2, 2, 'Increible todo', default, default);
+INSERT INTO comentarios  VALUES (default, 2, 1, 'Tremenda camiseta, idolos!', default, default);
+INSERT INTO comentarios  VALUES (default, 3, 1, 'Awante river', default, default);
+INSERT INTO comentarios  VALUES (default, 3, 5, 'Increible, saludos a la marca', default, default);
+INSERT INTO comentarios  VALUES (default, 3, 6, 'Son mis idolos', default, default);
+INSERT INTO comentarios  VALUES (default, 4, 5, 'me recomendaron la marca, esta todo muy bueno', default, default);
+INSERT INTO comentarios  VALUES (default, 4, 6, 'Increible pagina web se mandaron', default, default);
+INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorqzo', default, default);
+
+
+
+/*   id              
+id_post         
+id_usuario      
+comentarios  */
