@@ -92,3 +92,9 @@ INSERT INTO comentarios  VALUES (default, 4, 1, 'Que jugadorazo', default, defau
 INSERT INTO comentarios  VALUES (default, 5, 3, 'Top', default, default);
 INSERT INTO comentarios  VALUES (default, 5, 2, 'Mi favorita', default, default);
 INSERT INTO comentarios  VALUES (default, 5, 5, 'Que viva el futbol', default, default);
+INSERT INTO comentarios  VALUES (default, 6, 3, 'Muy bueno', default, default);
+INSERT INTO comentarios  VALUES (default, 6, 1, 'Lo quiero ya', default, default);
+INSERT INTO comentarios  VALUES (default, 6, 6, 'Tienen envio?', default, default);
+INSERT INTO comentarios  VALUES (default, 6, 4, 'Algun descuento?', default, default);
+INSERT INTO comentarios  VALUES (default, 7, 1, 'Aceptan mercado pago?', default, default);
+INSERT INTO comentarios  VALUES (default, 7, 7, 'Que equipazo ese', default, default);
