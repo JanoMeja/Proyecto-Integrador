@@ -21,8 +21,8 @@ create table productos (
 id              int           unsigned primary key  auto_increment,
 user_id         int           unsigned not null,  
 nombre          varchar(250)  not null,
-descripcion      varchar(500)  not null,
-
+descripcion     varchar(500)  not null,
+img      		varchar(500)  not null,
 FOREIGN KEY (user_id)  REFERENCES usuarios(id),
 
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -52,16 +52,16 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  INSERT INTO usuarios (id, email, contraseña, foto_de_perfil, fecha, dni)  VALUES (default, 'pulpogonzales@gmail.com', 'Ggonzales', '', '2021-02-04', '46738405');
  
 -- posteos
-INSERT INTO productos (id, user_id, nombre, descripcion) VALUES (default,1,'Argentina Primera Camisetas Retro Futbol 1978', "Camisa muy linda y significativa");
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,2, 'CAMISETA DE FUTBOL RETRO DE RIVER 1975', 'camisa de river vintage hecha con tela de calidad');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,3,'Camiseta Napoli Buitoni Maradona Titular Retro', 'Cosida a Mano y cuenta con Algodón Premium.');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,4,'Camiseta Argentina Scaloni Retro', 'camiseta de scaloni en sus ul');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,5,'Camiseta Argentina 86 Maradona Retro Campeón México 1986', 'Impresionante re-edición Argentina 1986, la que uso Diego Armando Maradona para traer el titulo de México 1986 a nuestro país Versión TITULAR');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,1,'Camiseta De Futbol Retro Vintage Del Rojo De Avellaneda ', 'CAMISETA DE FUTBOL RETRO DE INDEPENDIENTE 1934/1935,La mejor casaca Vintage del Diablo Rojo de Avellaneda');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,2,'Camiseta Boca 81 Maradona Titular Retro', 'Camiseta de Diego Armando MAradona titular de Boca Juniors');
-INSERT INTO productos (id, user_id, nombre, descripcion) VALUES (default,3,'Conjunto Retro Cruyff Holanda 1974 ', 'Conjunto de Holanda, la camiseta puede ir con o sin el nombre, tu propio nombre con el numero que quieras. Solo tenes que aclarar después de hacer la compra.');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,4,'Camiseta Retro Argentina 86 Azul Maradona Mano De Dios #10', 'Espectacular camiseta retro Selección Argentina alternativa 1986, la del gol del siglo y la mano contra los ingleses. Lleváte este pedazo de historia.Confeccionada en poliéster azul a bastones bi tono, escudo y logo bordado, número 10 en vinilo termotransferible.');
-INSERT INTO productos (id, user_id, nombre, descripcion)  VALUES (default,5,'Camiseta Argentina Aimar Retro', 'Camiseta con la dorsal 10 de Pablo Aimar con Tela Poliéster');
+INSERT INTO productos (id, user_id, nombre, descripcion, img) VALUES (default,1,'Camiseta Argentina Suplente Final Mundial 1990', 'Diego Armando Maradona #10', '/images/dam.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,2, 'Camiseta Boca Juniors Titular Final Libertadores 2007 ', 'Juan Roman Riquelme #10', '/images/jr.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,3,'Camiseta Argentina Titular Nueva con 3 estrellas', 'Lionel Andres Messi #10', '/images/lm.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,4,'Camiseta Brasil Titular Final Mundial 2002', 'Ronaldo Nazario #9', '/images/rn.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,5,'Camiseta Barcelona Titular Final Champions League 2006 ', ' Ronaldinho #10','/images/r.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,1,'Camiseta Paris Saint-Germain 2021 Titular', 'Presentación de Lionel Andres Messi #30', '/images/lm2.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,2,'Camiseta Boca Juniors Titular Final Intercontinental 2000', 'Martin Palermo #9', '/images/mp.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img) VALUES (default,3,'Camiseta Argentinos Juniors 1976 Titular', 'Diego Armando Maradona #16', '/images/dam2.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,4,'Camiseta Francia Suplente Final Mundial 2006', 'Zinedine Zidane #10', '/images/zz.jpg');
+INSERT INTO productos (id, user_id, nombre, descripcion, img)  VALUES (default,5,'Camiseta Inter de Milán Titular Final Champions League 2010', 'Diego Alberto Milito #22', '/images/dm.jpg');
 
 -- comentarios
 INSERT INTO comentarios (id, id_post, id_usuario, comentarios) VALUES (default, 1, 1, 'Muy buen produto');
