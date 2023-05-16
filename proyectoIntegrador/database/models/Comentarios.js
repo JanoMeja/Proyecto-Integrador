@@ -31,6 +31,6 @@ module.exports = function (sequilize, dataTypes) {
     let config = {
         tableName: "comentarios",
         timeStamp: false,
-
+        undercored: true,
     } 
 }

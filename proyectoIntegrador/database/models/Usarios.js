@@ -26,7 +26,7 @@ module.exports = function (sequalize, dataTypes) {
     let config = {
         tableName: 'productos',
         timestamps: false,
-        undercored: true,
+        undercored: true, /* si tiene giones en vez de camel case */
     };
 
     const Usarios = sequalize.define(alias, cols, config);
