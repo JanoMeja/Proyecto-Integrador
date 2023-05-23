@@ -4,9 +4,9 @@ const router = express.Router();
 const productosController = require('../controllers/productosController');
 
 /* crear sufijos */
-router.get('/', productosController.index);
-router.get('/detalle-productos', productosController.detalle)
-router.get('/aniadir-productos', productosController.aniadir)
+router.get('/all', productosController.findAll);
+/*router.get('/id/:id', productosController.show)
+router.get('/busqueda', productosController.resultado)*/
 
 /* exportar modulo */
 module.exports = router;

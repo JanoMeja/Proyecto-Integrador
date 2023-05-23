@@ -1,26 +1,49 @@
-const camisetas = require('../db/camisetas');
+const db = require('../database/models');
+const productos = db.Producto; 
+
 
 const productosController = {
-    index: function (req, res) {
-        return res.render('productos', {
-            lista: camisetas.productos,
-            usuarios: camisetas.usuario
-        })
-
+    findAll: (req, res) => {
+          productos.findAll()
+          .then(function(resultado) {
+              return res.render("productos", { listaProductos : resultado });   
+          }).catch(function (err){
+              console.log(err);
+          });
+          
     },
-    detalle: function (req, res) {
-        return res.render('detalle-productos', {
-            lista: camisetas.comentarios,
-        })
+    /* show: (req, res) => {
+        let id = req.params.id; 
 
+    productos.findByPk(id, rel)
+    .then(function(result) {
+
+      console.log(result);
+      return res.render('detalle-productos', {
+        productos: result
+      })
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
     },
-    aniadir: function (req, res) {
-        return res.render('aniadir-productos', {
-            lista: camisetas.productos,
-            usuario: camisetas.usuario
-        })
+    resultado: (req, res) => {
+        let busqueda = req.query.productos;
 
-    }
+    productos.findAll(
+      {
+        where: [
+         {title: {[op.like]: '%' + busqueda + '%'}}
+        ]
+      }
+    ).then(function(result) {
+      return res.render('busqueda', {listaProductos : result})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }*/
 };
+
 
 module.exports = productosController;

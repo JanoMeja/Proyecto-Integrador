@@ -18,16 +18,16 @@
                             lamentablemente Argentina sufrio la derrotada ante Alemania por 1-0 </p>
                     </article>
                     <div class="col-12 col-lg-4">
-                        <% for( let i=0; i < lista.length; i++ ) { %>
+                        <% for( let i=0; i < listaProductos.length; i++ ) { %>
                             <section class="comments">
                                 <article>
-                                    <img src="<%= lista[i].foto_perfil %>" alt="">
+                                    <img src="<%= listaProductos[i].img %>" alt="">
                                     <div class="data">
                                         <p class="user">
                                             <strong> <a href="/users/profile">
-                                                    <%= lista[i].nombre_de_usuario %>
+                                                    
                                                 </a> </strong>
-                                            <%= lista[i].texto %>
+                                            
                                         </p>
                                     </div>
                                 </article>
