@@ -6,7 +6,7 @@ const productosController = {
     findAll: (req, res) => {
           productos.findAll()
           .then(function(resultado) {
-              return res.render("productos", { listaProductos : resultado });   
+           return res.render("productos", { listaProductos : resultado });   
           }).catch(function (err){
               console.log(err);
           });
