@@ -12,21 +12,19 @@ const productosController = {
           });
           
     },
-    /* show: (req, res) => {
-        let id = req.params.id; 
 
-    productos.findByPk(id, rel)
+   /*show: (req, res) => {
+    let id = req.params.id;
+    productos.findByPk(id)
     .then(function(result) {
-
       console.log(result);
-      return res.render('detalle-productos', {
-        productos: result
-      })
-    })
-    .catch(function(error) {
+      return res.render('detalle-productos', { productos: result })
+    })}, 
+   /* .catch(function(error) {
       console.log(error);
     });
     },
+    
     resultado: (req, res) => {
         let busqueda = req.query.productos;
 
@@ -41,8 +39,8 @@ const productosController = {
     })
     .catch(function (error) {
       console.log(error);
-    });
-  }*/
+    });*/
+  
 };
 
 

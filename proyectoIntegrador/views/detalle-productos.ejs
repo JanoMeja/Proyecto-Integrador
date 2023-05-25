@@ -14,14 +14,13 @@
                     <article class="col-12 col-lg-8 product-detail-info">
                         <img src="/images/dam.jpg" alt="" class="product-detail-img">
                         <p class="product-detail-description">
-                            Esta es la camiseta que uso Diego Armando Maradona en aquella final de Mundial 1990 que
-                            lamentablemente Argentina sufrio la derrotada ante Alemania por 1-0 </p>
+                          Descripcion: <%= productos.descripcion %> </p>
                     </article>
                     <div class="col-12 col-lg-4">
-                        <% for( let i=0; i < listaProductos.length; i++ ) { %>
+                        <% for( let i=0; i < productos.length; i++ ) { %>
                             <section class="comments">
                                 <article>
-                                    <img src="<%= listaProductos[i].img %>" alt="">
+                                    <img src="<%= productos[i].img %>" alt="">
                                     <div class="data">
                                         <p class="user">
                                             <strong> <a href="/users/profile">
