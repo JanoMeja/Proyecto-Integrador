@@ -12,35 +12,6 @@ const productosController = {
           });
           
     },
-
-   /*show: (req, res) => {
-    let id = req.params.id;
-    productos.findByPk(id)
-    .then(function(result) {
-      console.log(result);
-      return res.render('detalle-productos', { productos: result })
-    })}, 
-   /* .catch(function(error) {
-      console.log(error);
-    });
-    },
-    
-    resultado: (req, res) => {
-        let busqueda = req.query.productos;
-
-    productos.findAll(
-      {
-        where: [
-         {title: {[op.like]: '%' + busqueda + '%'}}
-        ]
-      }
-    ).then(function(result) {
-      return res.render('busqueda', {listaProductos : result})
-    })
-    .catch(function (error) {
-      console.log(error);
-    });*/
-  
 };
 
 

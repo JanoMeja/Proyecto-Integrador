@@ -1,4 +1,4 @@
-module.exports = function (sequalize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
     let alias = "Usuario";
     
     let cols = {
@@ -30,7 +30,7 @@ module.exports = function (sequalize, dataTypes) {
         undercored: false,
     };
 
-    const Usuario = sequalize.define(alias, cols, config);
+    const Usuario = sequelize.define(alias, cols, config);
     
     Usuario.associate = function(models) {
         Usuario.hasMany(models.Producto , {

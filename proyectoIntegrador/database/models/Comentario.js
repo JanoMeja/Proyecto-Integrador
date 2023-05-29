@@ -1,4 +1,4 @@
-module.exports = function (sequalize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
     
     let alias = "Comentario";
     
@@ -33,7 +33,7 @@ module.exports = function (sequalize, dataTypes) {
         undercored: false,
     };
 
-    const Comentario = sequalize.define(alias, cols, config);
+    const Comentario = sequelize.define(alias, cols, config);
 
     return Comentario;
 }
