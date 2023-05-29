@@ -8,7 +8,7 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        user_id:{
+        userId:{
             type: dataTypes.INTEGER,
         },
         nombre:{
@@ -25,10 +25,23 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
         tableName: 'productos',
         timestamps: false, 
-        underscored: true, 
+        underscored: false, 
     };
 
     const Producto = sequelize.define(alias, cols, config);
+
+     /* Crear relaciones */
+   Producto.associate = function(models) {
+        Producto.belongsTo(models.Usuario , {
+            as: "usuario",
+            foreingKey : "user_id"
+            
+        }),
+        Producto.hasMany(models.Comentario, {
+            as: "post",
+            foreingKey: "id_post"
+            })
+         };
 
     return Producto;
 };

@@ -8,7 +8,7 @@ create table usuarios (
 id               int         unsigned primary key  auto_increment,
 email            varchar(200)    not null,
 contraseña       varchar(150)   not null,
-foto_de_perfil   varchar(500)    null,
+fotoDePerfil   varchar(500)    null,
 fecha            date,
 dni              int            not null,
 cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -19,7 +19,7 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 create table productos (
 -- nombre        tipo         restriccion           
 id              int           unsigned primary key  auto_increment,
-user_id         int           unsigned not null,  
+userId         int           unsigned not null,  
 nombre          varchar(250)  not null,
 descripcion     varchar(500)  not null,
 img      		varchar(500)  not null,
@@ -33,8 +33,8 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 create table comentarios (
 -- nombre        tipo         restriccion  
 id               int          unsigned primary key auto_increment,
-id_post          int          unsigned not null,
-id_usuario       int          unsigned not null,
+idPost          int          unsigned not null,
+idUsuario       int          unsigned not null,
 comentarios      varchar(500) not null, 
 
 FOREIGN KEY (id_usuario)  REFERENCES usuarios(id),

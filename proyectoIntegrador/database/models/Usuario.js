@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
         constraseña: {
                 type: dataTypes.STRING,
         },
-        foto_de_perfil: {
+        fotoDePerfil: {
                 type: dataTypes.STRING,
         },
         fecha: {
@@ -27,10 +27,21 @@ module.exports = function (sequelize, dataTypes) {
     let config = {
         tableName: 'usuarios',
         timestamps: false,
-        undercored: true,
+        undercored: false,
     };
 
     const Usuario = sequelize.define(alias, cols, config);
     
+    Usuario.associate = function(models) {
+        Usuario.hasMany(models.Producto , {
+            as: "usuario",
+            foreingKey : "user_id"
+            }),
+        Usuario.hasMany(models.Comentario , {
+            as: "comentario",
+            foreingKey : "id_usuario"
+            })};
+
+
     return Usuario;
 }
