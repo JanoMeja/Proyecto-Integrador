@@ -31,7 +31,7 @@ module.exports = function(sequelize, dataTypes) {
     const Producto = sequelize.define(alias, cols, config);
 
      /* Crear relaciones */
-   Producto.associate = function(models) {
+   /*Producto.associate = function(models) {
         Producto.belongsTo(models.Usuario , {
             as: "usuario",
             foreingKey : "user_id"
@@ -41,7 +41,7 @@ module.exports = function(sequelize, dataTypes) {
             as: "post",
             foreingKey: "idPost"
             })
-         };
+         };*/
 
     return Producto;
 };

@@ -10,7 +10,7 @@
                 <% for( let i=0; i< 5; i++ ) { %>
                     <div class="col-12 col-sm-6 col-lg-3">
                         <section class="product-box">
-                            <a href="/productos/detalle-productos">
+                            <a href="/productos/detalle-productos/<%= listaProductos[i].id %>" >
                                 <figure class="product-box_image">
                                     <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%" class="tamano">
                                 </figure>
@@ -30,7 +30,7 @@
                         <% for( let i=5;i< listaProductos.length; i++ ) { %>
                             <div class="col-12 col-sm-6 col-lg-3">
                                 <section class="product-box">
-                                    <a href="/productos/detalle-productos">
+                                    <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
                                         <figure class="product-box_image">
                                             <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%" class="tamano">
                                         </figure>

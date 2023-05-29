@@ -2,45 +2,48 @@
 
     <%- include('./partials/header') %>
         <!-- product detail -->
-        <div class="container products-wrapper">
-            <div class="d-flex align-items-center">
-                <h2 class="products-title">Camiseta Argentina Maradona</h2>
-                <p class="product-detail-description">
-                    <a href="/productos/aniadir-productos">Editar</a>
-                </p>
-            </div>
-            <div class="product-detail">
-                <div class="row">
-                    <article class="col-12 col-lg-8 product-detail-info">
-                        <img src="/images/dam.jpg" alt="" class="product-detail-img">
-                        <p class="product-detail-description">
-                          Descripcion: <%= productos.descripcion %> </p>
-                    </article>
-                    <div class="col-12 col-lg-4">
-                        <% for( let i=0; i < productos.length; i++ ) { %>
-                            <section class="comments">
-                                <article>
-                                    <img src="<%= productos[i].img %>" alt="">
-                                    <div class="data">
-                                        <p class="user">
-                                            <strong> <a href="/users/profile">
-                                                    
-                                                </a> </strong>
-                                            
-                                        </p>
-                                    </div>
-                                </article>
-                            </section>
-                            <% } %>
-                                <form class="form" action="" method="POST">
-                                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
-                                    <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-                                </form>
-                                <hr>
+            <div class="container products-wrapper">
+                <div class="d-flex align-items-center">
+                    <h2 class="products-title">
+                        <%= producto.nombre %>
+                    </h2>
+                    <p class="product-detail-description">
+                        <a href="/productos/aniadir-productos">Editar</a>
+                    </p>
+                </div>
+                <div class="product-detail">
+                    <div class="row">
+                        <article class="col-12 col-lg-8 product-detail-info">
+                            <img src="<%= producto.img %>" alt="" width="100%" class="product-detail-img">
+                            <p class="product-detail-description">
+                                Descripcion: <%= producto.descripcion %>
+                            </p>
+                        </article>
+                        <div class="col-12 col-lg-4">
+                        
+                                    <section class="comments">
+                                        <article>
+                                            <img src="" alt="">
+                                            <div class="data">
+                                                <p class="user">
+                                                    <strong> <a href="/users/profile">
+
+                                                        </a> </strong>
+
+                                                </p>
+                                            </div>
+                                        </article>
+                                    </section>
+                            
+                                        <form class="form" action="" method="POST">
+                                            <input class="form-input" type="text" value=""
+                                                placeholder="Agregar comentario">
+                                            <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                                        </form>
+                                        <hr>
+                            </div> 
                     </div>
                 </div>
             </div>
-        </div>
-        </div>
-        <!-- /product detail -->
-        <%- include('./partials/footer') %>
+                <!-- /product detail -->
+                <%- include('./partials/footer') %>

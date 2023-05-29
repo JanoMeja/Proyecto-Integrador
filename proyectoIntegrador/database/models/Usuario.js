@@ -10,7 +10,10 @@ module.exports = function (sequelize, dataTypes) {
         email: {
                 type: dataTypes.STRING,
         },
-        constraseña: {
+        usuario: {
+                type: dataTypes.STRING,
+        },
+        contrasenia: {
                 type: dataTypes.STRING,
         },
         fotoDePerfil: {
@@ -32,7 +35,7 @@ module.exports = function (sequelize, dataTypes) {
 
     const Usuario = sequelize.define(alias, cols, config);
     
-    Usuario.associate = function(models) {
+  /*  Usuario.associate = function(models) {
         Usuario.hasMany(models.Producto , {
             as: "usuario",
             foreingKey : "user_id"
@@ -40,7 +43,7 @@ module.exports = function (sequelize, dataTypes) {
         Usuario.hasMany(models.Comentario , {
             as: "comentario",
             foreingKey : "idUsuario"
-            })};
+            })};*/
 
 
     return Usuario;
