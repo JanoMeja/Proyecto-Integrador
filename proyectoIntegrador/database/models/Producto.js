@@ -39,7 +39,7 @@ module.exports = function(sequelize, dataTypes) {
         }),
         Producto.hasMany(models.Comentario, {
             as: "post",
-            foreingKey: "id_post"
+            foreingKey: "idPost"
             })
          };
 

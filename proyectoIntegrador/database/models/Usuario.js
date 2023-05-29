@@ -39,7 +39,7 @@ module.exports = function (sequalize, dataTypes) {
             }),
         Usuario.hasMany(models.Comentario , {
             as: "comentario",
-            foreingKey : "id_usuario"
+            foreingKey : "idUsuario"
             })};
 
 
