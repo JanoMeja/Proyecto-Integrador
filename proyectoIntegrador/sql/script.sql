@@ -46,7 +46,7 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
  
  -- usarios
- INSERT INTO usuarios (id, email, usuario,  contraseña, fotoDePerfil, fecha, dni)  VALUES (default, 'aguscarmanp@gmail.com','Agustin' 'Agus0506', '/images/perfil.jpg', '2000-02-22', '42372582');
+ INSERT INTO usuarios (id, email, usuario,  contraseña, fotoDePerfil, fecha, dni)  VALUES (default, 'aguscarmanp@gmail.com','Agustin' ,'Agus0506', '/images/perfil.jpg', '2000-02-22', '42372582');
  INSERT INTO usuarios (id, email, usuario, contraseña, fotoDePerfil, fecha, dni)  VALUES (default, 'esuarez@gmail.com','Emiliano', 'SuarezLuis12', '/images/perfil.jpg', '2023-04-06', '45293032');
  INSERT INTO usuarios (id, email, usuario,  contraseña, fotoDePerfil, fecha, dni) VALUES (default, 'janomeja@gmail.com','Jano', 'Janocrack','/images/perfil.jpg', '2023-07-10', '45234321');
  INSERT INTO usuarios (id, email, usuario, contraseña, fotoDePerfil, fecha, dni) VALUES (default, 'juanitocazares@gmail.com', 'Juanito','Jcazares2112', '/images/perfil.jpg', '2002-01-02', '43565071');
