@@ -5,7 +5,7 @@ const productosController = require('../controllers/productosController');
 
 /* crear sufijos */
 router.get('/all', productosController.findAll);
-router.get('/detalle-productos/:id', productosController.show);
+//router.get('/detalle-productos/:id', productosController.show);
  //router.get('/busqueda', productosController.resultado)*/
 
 /* exportar modulo */

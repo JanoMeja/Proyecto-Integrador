@@ -30,7 +30,7 @@ module.exports = function (sequalize, dataTypes) {
     let config = {
         tableName: 'comentarios',
         timestamps: false,
-        undercored: true,
+        undercored: false,
     };
 
     const Comentario = sequalize.define(alias, cols, config);
