@@ -31,10 +31,10 @@ module.exports = function(sequelize, dataTypes) {
     const Producto = sequelize.define(alias, cols, config);
 
      /* Crear relaciones */
-   /*Producto.associate = function(models) {
+   /* Producto.associate = function(models) {
         Producto.belongsTo(models.Usuario , {
             as: "usuario",
-            foreingKey : "user_id"
+            foreingKey : "userId"
             
         }),
         Producto.hasMany(models.Comentario, {
