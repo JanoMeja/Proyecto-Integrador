@@ -12,7 +12,7 @@ contrasenia       varchar(150)   not null,
 fotoDePerfil   varchar(500)    null,
 fecha            date,
 dni              int            not null,
-cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+createdAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
@@ -26,7 +26,7 @@ descripcion     varchar(500)  not null,
 img      		varchar(500)  not null,
 FOREIGN KEY (userId)  REFERENCES usuarios(id),
 
-cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+createdAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
@@ -41,7 +41,7 @@ comentarios      varchar(500) not null,
 FOREIGN KEY (idUsuario)  REFERENCES usuarios(id),
 FOREIGN KEY (idPost)  REFERENCES productos(id),
 
-cratedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+createdAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
  
@@ -54,15 +54,15 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
  
 -- posteos
 INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,1,'Camiseta Argentina Suplente Final Mundial 1990', 'Diego Armando Maradona #10', '/images/dam.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,2, 'Camiseta Boca Juniors Titular Final Libertadores 2007 ', 'Juan Roman Riquelme #10', '/images/jr.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,3,'Camiseta Argentina Titular Nueva con 3 estrellas', 'Lionel Andres Messi #10', '/images/lm.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,4,'Camiseta Brasil Titular Final Mundial 2002', 'Ronaldo Nazario #9', '/images/rn.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,5,'Camiseta Barcelona Titular Final Champions League 2006 ', ' Ronaldinho #10','/images/r.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,1,'Camiseta Paris Saint-Germain 2021 Titular', 'Presentación de Lionel Andres Messi #30', '/images/lm2.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,2,'Camiseta Boca Juniors Titular Final Intercontinental 2000', 'Martin Palermo #9', '/images/mp.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,2, 'Camiseta Boca Juniors Titular Final Libertadores 2007 ', 'Juan Roman Riquelme #10', '/images/jr.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,3,'Camiseta Argentina Titular Nueva con 3 estrellas', 'Lionel Andres Messi #10', '/images/lm.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,4,'Camiseta Brasil Titular Final Mundial 2002', 'Ronaldo Nazario #9', '/images/rn.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,5,'Camiseta Barcelona Titular Final Champions League 2006 ', ' Ronaldinho #10','/images/r.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,1,'Camiseta Paris Saint-Germain 2021 Titular', 'Presentación de Lionel Andres Messi #30', '/images/lm2.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,2,'Camiseta Boca Juniors Titular Final Intercontinental 2000', 'Martin Palermo #9', '/images/mp.jpg');
 INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,3,'Camiseta Argentinos Juniors 1976 Titular', 'Diego Armando Maradona #16', '/images/dam2.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,4,'Camiseta Francia Suplente Final Mundial 2006', 'Zinedine Zidane #10', '/images/zz.jpg');
-INSERT INTO productos (id, userId, nombre, descripcion, img)  VALUES (default,5,'Camiseta Inter de Milán Titular Final Champions League 2010', 'Diego Alberto Milito #22', '/images/dm.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,4,'Camiseta Francia Suplente Final Mundial 2006', 'Zinedine Zidane #10', '/images/zz.jpg');
+INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,5,'Camiseta Inter de Milán Titular Final Champions League 2010', 'Diego Alberto Milito #22', '/images/dm.jpg');
 
 -- comentarios
 INSERT INTO comentarios (id, idPost, idUsuario, comentarios) VALUES (default, 1, 1, 'Muy buen produto');

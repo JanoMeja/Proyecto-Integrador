@@ -5,7 +5,9 @@ let op = db.Sequelize.Op;
 
 const productosController = {
   findAll: (req, res) => {
-    productos.findAll()
+    productos.findAll({
+      order : [["createdAT", "DESC"]]
+    })
       .then(function (resultado) {
         return res.render("productos", { listaProductos: resultado });
       }).catch(function (err) {
@@ -15,9 +17,12 @@ const productosController = {
   },
   show: (req, res) => {
     let id = req.params.id; 
-    productos.findByPk(id)
+    let rel =  {
+      include: { association: "comentario",
+      include: {association: "usuario"} }
+    };
+    productos.findByPk(id, rel)
       .then(function (result) {
-        console.log(result);
         return res.render("detalle-productos", {
           producto: result,
         });
