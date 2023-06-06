@@ -3,34 +3,68 @@ const user = db.Usuario
 const bcrypt = require('bcryptjs');
 
 const userController = {
-    formRegister: (req,res) => {
+    formRegister: (req, res) => {
         return res.render('registro')
     },
-    registerPost: function(req, res) {
+    registerPost: function (req, res) {
         let info = req.body;
-        console.log(req.body)
-        let pass = info.contrasenia
-        info.contrasenia = bcrypt.hashSync(pass, 10)
+        /*let pass = info.contrasenia
+        info.contrasenia = bcrypt.hashSync(pass, 10)*/
 
         user.create(info)
-        .then(function(result) {
-            return res.redirect('/users/login');
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
+            .then(function (result) {
+                return res.redirect('/users/login');
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     },
-    formLogin: (req,res) => {
+    formLogin: (req, res) => {
         return res.render('login')
     },
     loginPost: (req, res) => {
-        return res.redirect('/productos/all')
+        let info = req.body;
+        let emailBuscado = req.body.email;
+        /*let pass = req.body.contrasenia;*/
+
+        let filtrado = {
+            where: [{ email: emailBuscado }]
+        };
+        user.findOne(filtrado)
+            .then((result) => {
+
+                if (result != null) {
+                    /*let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)*/
+                    if (result.dataValues.contrasenia == info.contrasenia) {
+                        /* poner en session */
+
+                        req.session.user = result.dataValues;
+
+                        return res.redirect('/productos/all');
+
+                    } else {
+                        return res.send("La contraseña ingresada es incorrecta");
+                    }
+                } else {
+                    return res.send("Este mail es inexistente")
+                }
+
+            }).catch((err) => {
+                console.log(err);
+            });
+
+
     },
-    perfil: (req,res) => {
-        return res.render ('profile')
+    perfil: (req, res) => {
+        user.findAll()
+            .then(function (resultado) {
+                return res.render("profile", { listaUsuarios: resultado });
+            }).catch(function (err) {
+                console.log(err);
+            });
     },
-    editar: (req,res) => {
-        return res.render ('profile-edit')
+    editar: (req, res) => {
+        return res.render('profile-edit')
     }
 };
 

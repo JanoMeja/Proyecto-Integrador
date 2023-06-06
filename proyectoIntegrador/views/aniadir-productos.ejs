@@ -6,18 +6,18 @@
                     <h2 class="products-title">Agregar productos</h2>
                 </div>
                 <!-- Show the "ultimos" products -->
-                <form action="/users/profile" method="GET" class="registro">
+                <form action="/productos/aniadir" method="post" class="registro">
                     <label for="imagen">Imagen:</label>
-                    <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+                    <input type="file" id="archivo" name="img" accept=".pdf,.doc,.docx">
 
                     <label for="usuario">Nombre del Producto:</label>
-                    <input type="text" id="usuario" name="usuario"><br><br>
+                    <input type="text" id="usuario" name="nombre"><br><br>
 
                     <label for="descripcion">Descripción:</label>
                     <input type="text" id="descripcion" name="descripcion"><br><br>
 
                     <label for="fecha_carga">Fecha de carga:</label>
-                    <input type="date" id="fecha_carga" name="fecha_carga"><br><br>
+                    <input type="date" id="fecha_carga" name="cratedAT"><br><br>
 
                     <input type="submit" value="Agregar Producto">
                 </form>

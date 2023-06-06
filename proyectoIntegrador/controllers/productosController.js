@@ -41,6 +41,20 @@ const productosController = {
         console.log(error);
       });
   },
+  showForm: (req, res) => {
+    return res.render("aniadir-productos");
+  },
+  store: (req, res) => {
+    let info = req.body;
+    info.userId = req.session.user.id
+      productos.create(info)
+      .then((result) => {
+        return res.redirect("/productos/all");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
 };
 
 
