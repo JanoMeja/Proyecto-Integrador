@@ -1,47 +1,55 @@
-module.exports = function(sequelize, dataTypes) {
-    
+module.exports = function (sequelize, dataTypes) {
+
     let alias = "Producto";
 
     let cols = {
-        id:{
+        id: {
             autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER,
         },
-        userId:{
+        userId: {
             type: dataTypes.INTEGER,
         },
-        nombre:{
+        nombre: {
             type: dataTypes.STRING,
         },
-        descripcion:{
+        descripcion: {
             type: dataTypes.STRING,
         },
         img: {
             type: dataTypes.STRING
+        },
+        createdAt: {
+            type: dataTypes.DATE
+        },
+        updatedAt: {
+            type: dataTypes.DATE
+
         }
     };
 
     let config = {
         tableName: 'productos',
-        timestamps: false, 
-        underscored: false, 
+        timestamps: false,
+        underscored: false,
     };
 
     const Producto = sequelize.define(alias, cols, config);
 
-     /* Crear relaciones */
-   /*Producto.associate = function(models) {
-        Producto.belongsTo(models.Usuario , {
-            as: "usuario",
-            foreingKey : "user_id"
-            
-        }),
+    /* Crear relaciones */
+    Producto.associate = function (models) {
+         Producto.belongsTo(models.Usuario, {
+             as: "usuarios",
+             foreignKey: "userId"
+
+         })
+        
         Producto.hasMany(models.Comentario, {
-            as: "post",
-            foreingKey: "idPost"
-            })
-         };*/
+            as: "comentario",
+            foreignKey: "idPost"
+        })
+    };
 
     return Producto;
 };

@@ -12,6 +12,10 @@ let productosRouter = require('./routes/productos');
 
 var app = express();
 
+app.use(session( { secret: "MyApp",
+				resave: false,
+				saveUninitialized: true }));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -26,9 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter)
 
-app.use(session( { secret: "MyApp",
-				resave: false,
-				saveUninitialized: true }));
+
 
 app.use(function (req, res, next) {
   if (req.session.user != undefined) {
