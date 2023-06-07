@@ -7,23 +7,23 @@
         <div class="container products-wrapper">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="products-title">Agregar productos</h2>
+                    <h2 class="products-title">Editar productos</h2>
                 </div>
                 <!-- Show the "ultimos" products -->
-                <form action="/productos/aniadir" method="post" class="registro">
+                <form action="/productos/update/<%= producto.id %>" method="post" class="registro">
                     <label for="imagen">Imagen:</label>
-                    <input type="file" id="archivo" name="img" accept=".pdf,.doc,.docx">
+                    <input type="file" id="archivo" name="img" accept=".pdf,.doc,.docx,.jpg" value="<%= producto.img %>">
 
                     <label for="usuario">Nombre del Producto:</label>
-                    <input type="text" id="usuario" name="nombre"><br><br>
+                    <input type="text" id="usuario" name="nombre" value="<%= producto.nombre %>"><br><br>
 
                     <label for="descripcion">Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion"><br><br>
+                    <input type="text" id="descripcion" name="descripcion" value="<%= producto.descripcion %>"><br><br>
 
                     <label for="fecha_carga">Fecha de carga:</label>
-                    <input type="date" id="fecha_carga" name="cratedAT"><br><br>
+                    <input type="date" id="fecha_carga" name="cratedAT" value="<%= producto.createdAT %>"><br><br>
 
-                    <input type="submit" value="Agregar Producto">
+                    <input type="submit" value="Editar Producto">
                 </form>
             </div>
         </div>

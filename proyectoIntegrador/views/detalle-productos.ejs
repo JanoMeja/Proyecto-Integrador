@@ -1,15 +1,24 @@
 <%- include('./partials/head') %>
-
+<% if (locals.user) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
     <%- include('./partials/header') %>
+<% } %>
         <!-- product detail -->
             <div class="container products-wrapper">
                 <div class="d-flex align-items-center">
                     <h2 class="products-title">
                         <%= producto.nombre %>
                     </h2>
-                    <p class="product-detail-description">
-                        <a href="/productos/aniadir-productos">Editar</a>
-                    </p>
+                    <div class="sectionUpdate">
+                        <div>
+                          <a class="btn btnUpdate"  href="/productos/update/<%= producto.id %> ">Modificar</a>
+                        </div>
+                        <form action="/productos/delete" method="POST">
+                            <input type="text" hidden name="id" id="" value="<%= producto.id %>">
+                            <input class="btn btnDelete" value="Eliminar" type="submit">
+                        </form>
+                    </div>
                 </div>
                 <div class="product-detail">
                     <div class="row">
@@ -28,7 +37,7 @@
                                             <img src="<%= producto.comentario[i].usuario.fotoDePerfil %>" alt="">
                                             <div class="data">
                                                 <p class="user">
-                                                    <strong> <a href="/users/profile">
+                                                    <strong> <a href="/users/profile/<%=producto.comentario[i].usuario.id  %>">
                                                         <%=producto.comentario[i].usuario.usuario  %>
                                                         </a> </strong> <%= producto.comentario[i].comentarios %>
 
@@ -38,7 +47,7 @@
                                         <% } %>
                                     </section>
                             
-                                        <form class="form" action="" method="POST">
+                                        <form class="form" action="/productos/detalle-productos" method="POST">
                                             <input class="form-input" type="text" value=""
                                                 placeholder="Agregar comentario">
                                             <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

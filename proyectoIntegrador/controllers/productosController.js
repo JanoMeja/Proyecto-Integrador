@@ -9,13 +9,14 @@ const productosController = {
       order : [["createdAT", "DESC"]]
     })
       .then(function (resultado) {
+        
         return res.render("productos", { listaProductos: resultado });
       }).catch(function (err) {
         console.log(err);
       });
 
   },
-  show: (req, res) => {
+  detalle: (req, res) => {
     let id = req.params.id; 
     let rel =  {
       include: { association: "comentario",
@@ -46,10 +47,10 @@ const productosController = {
         console.log(error);
       });
   },
-  showForm: (req, res) => {
+  Form: (req, res) => {
     return res.render("aniadir-productos");
   },
-  store: (req, res) => {
+  guardar: (req, res) => {
     let info = req.body;
     info.userId = req.session.user.id
       productos.create(info)
@@ -58,6 +59,42 @@ const productosController = {
       })
       .catch((error) => {
         console.log(error);
+      });
+  },
+  formActualizado: (req, res) => {
+    let id = req.params.id;
+    productos.findByPk(id)
+      .then((result) => {
+        console.log(result);
+        return res.render("editar-productos", { producto: result });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  actualizar: (req, res) => {
+    let id = req.params.id;
+    let data = req.body;
+    productos.update(data, {
+        where: [{ id: id }],
+      })
+      .then((result) => {
+        return res.redirect("/productos/detalle-productos/" + id);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  eliminar: (req, res) => {
+    let idDelete = req.body.id;
+    productos.destroy({
+        where: [{ id: idDelete }],
+      })
+      .then((result) => {
+        return res.redirect("/productos/all");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   },
 };

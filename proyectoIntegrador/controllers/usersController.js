@@ -39,7 +39,7 @@ const userController = {
                         /* poner en session */
 
                         req.session.user = result.dataValues;
-
+                    
                         return res.redirect('/productos/all');
 
                     } else {
@@ -56,13 +56,17 @@ const userController = {
 
     },
     perfil: (req, res) => {
-        user.findAll()
-            .then(function (resultado) {
-                return res.render("profile", { listaUsuarios: resultado });
-            }).catch(function (err) {
-                console.log(err);
+        let id = req.params.id; 
+        user.findByPk(id)
+          .then(function (result) {
+            return res.render("profile", {
+              usuario: result,
             });
-    },
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      },
     editar: (req, res) => {
         return res.render('profile-edit')
     }

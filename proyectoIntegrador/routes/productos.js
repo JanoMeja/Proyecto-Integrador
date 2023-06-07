@@ -5,13 +5,21 @@ const productosController = require('../controllers/productosController');
 
 /* crear sufijos */
 router.get('/all', productosController.findAll);
-router.get('/detalle-productos/:id', productosController.show);
+router.get('/detalle-productos/:id', productosController.detalle);
 
 router.get('/search-results', productosController.resultado);
 
-router.get('/aniadir',productosController.showForm)
-router.post('/aniadir',productosController.store)
+router.get('/aniadir',productosController.Form)
+router.post('/aniadir',productosController.guardar)
 
+/* Mostrar Form para Actualizar movie */
+router.get("/update/:id", productosController.formActualizado)
+
+/* Enviar actualización de movie*/
+router.post("/update/:id", productosController.actualizar)
+
+/* Elimnar movie */
+router.post("/delete", productosController.eliminar)
 /* exportar modulo */
 module.exports = router;
 

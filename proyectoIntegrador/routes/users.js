@@ -12,7 +12,7 @@ router.post('/registro', usersController.registerPost)
 router.get('/login', usersController.formLogin);
 router.post('/login', usersController.loginPost)
 
-router.get('/profile', usersController.perfil);
+router.get('/profile/:id', usersController.perfil);
 router.get('/profile-edit', usersController.editar);
 
 
