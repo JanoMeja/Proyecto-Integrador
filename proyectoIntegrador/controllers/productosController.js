@@ -5,9 +5,11 @@ let op = db.Sequelize.Op;
 
 const productosController = {
   findAll: (req, res) => {
-    productos.findAll({
-      order : [["createdAT", "DESC"]]
-    })
+    let criterio = {
+      order: [['createdAT', 'DESC']],
+      include: [{association: 'comentario'},{association: 'usuarios'}]
+    };
+    productos.findAll(criterio)
       .then(function (resultado) {
         return res.render("productos", { listaProductos: resultado });
       }).catch(function (err) {
