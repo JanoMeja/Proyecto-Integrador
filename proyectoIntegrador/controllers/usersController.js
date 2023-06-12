@@ -39,7 +39,10 @@ const userController = {
                         /* poner en session */
 
                         req.session.user = result.dataValues;
-                    
+                        if (req.body.recordarme != undefined) {
+                            res.cookie('userId', result.id, {maxAge: 1000 * 60 * 15});
+                        }
+                       
                         return res.redirect('/productos/all');
 
                     } else {
@@ -68,8 +71,33 @@ const userController = {
           });
       },
     editar: (req, res) => {
-        return res.render('profile-edit')
-    }
+    let id = req.params.id;
+    user.findByPk(id)
+      .then((result) => {
+        console.log(result);
+        return res.render("profile-edit", { user: result });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },
+    actualizar: (req, res) => {
+        let id = req.params.id;
+        let data = req.body;
+        user.update(data, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            return res.redirect("/users/profile/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      logout: (req, res) => {
+        res.clearCookie('userId');
+        return res.render('login');
+    },
 };
 
 module.exports = userController;
