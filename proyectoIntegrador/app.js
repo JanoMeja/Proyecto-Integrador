@@ -38,7 +38,13 @@ app.use(function (req, res, next) {
 
   return next();
 });
-
+app.use(function(req,res,next){
+  if(req.cookies.userId && req.session.user == undefined){
+    // poner en sesion y locals nuevamente el usuario en cookie
+    return next()
+  }
+  return next()
+})
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/productos', productosRouter)

@@ -8,8 +8,8 @@ const userController = {
     },
     registerPost: function (req, res) {
         let info = req.body;
-        /*let pass = info.contrasenia
-        info.contrasenia = bcrypt.hashSync(pass, 10)*/
+        let pass = info.contrasenia
+        info.contrasenia = bcrypt.hashSync(pass, 10)
 
         user.create(info)
             .then(function (result) {
@@ -25,17 +25,17 @@ const userController = {
     loginPost: (req, res) => {
         let info = req.body;
         let emailBuscado = req.body.email;
-        /*let pass = req.body.contrasenia;*/
-
+        
         let filtrado = {
-            where: [{ email: emailBuscado }]
+          where: [{ email: emailBuscado }]
         };
         user.findOne(filtrado)
-            .then((result) => {
-
-                if (result != null) {
-                    /*let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)*/
-                    if (result.dataValues.contrasenia == info.contrasenia) {
+        .then((result) => {
+          
+          if (result != null) {
+                  let pass = req.body.contrasenia;
+                    let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)
+                    if (claveCorrecta) {
                         /* poner en session */
 
                         req.session.user = result.dataValues;
@@ -96,7 +96,9 @@ const userController = {
       },
       logout: (req, res) => {
         res.clearCookie('userId');
-        return res.render('login');
+        req.session.user = req.locals.user
+        req.locals.user = undefined
+        return res.redirect('/users/login');
     },
 };
 

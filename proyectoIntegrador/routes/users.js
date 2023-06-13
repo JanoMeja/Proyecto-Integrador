@@ -11,7 +11,7 @@ router.post('/registro', usersController.registerPost)
 
 router.get('/login', usersController.formLogin);
 router.post('/login', usersController.loginPost)
-
+router.get('/logout', usersController.logout)
 router.get('/profile/:id', usersController.perfil);
 
 router.get('/profile-edit/:id', usersController.editar);
