@@ -1,6 +1,9 @@
 <%- include('./partials/head') %>
-	<%- include('./partials/header') %>
-
+<% if (locals.user) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+<% } %>
 		<body>
 			<h1 class="centro">Login</h1>
 			<form action="/users/login" method="post" id="login-form" class="login">
@@ -10,7 +13,7 @@
 				<label for="contraseña">Contraseña:</label>
 				<input type="password" id="contraseña" name="contrasenia" required><br><br>
 
-				<input type="checkbox" id="checkbox1" name="checkbox1" value="1">
+				<input type="checkbox" id="recordarme" name="recordarme" value="1">
 				<label for="checkbox1">Recordarme</label>
 
 				<input type="submit" value="Ingresar">

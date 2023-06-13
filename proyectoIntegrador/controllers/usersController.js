@@ -8,8 +8,8 @@ const userController = {
     },
     registerPost: function (req, res) {
         let info = req.body;
-        /*let pass = info.contrasenia
-        info.contrasenia = bcrypt.hashSync(pass, 10)*/
+        let pass = info.contrasenia
+        info.contrasenia = bcrypt.hashSync(pass, 10)
 
         user.create(info)
             .then(function (result) {
@@ -25,21 +25,24 @@ const userController = {
     loginPost: (req, res) => {
         let info = req.body;
         let emailBuscado = req.body.email;
-        /*let pass = req.body.contrasenia;*/
-
+        
         let filtrado = {
-            where: [{ email: emailBuscado }]
+          where: [{ email: emailBuscado }]
         };
         user.findOne(filtrado)
-            .then((result) => {
-
-                if (result != null) {
-                    /*let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)*/
-                    if (result.dataValues.contrasenia == info.contrasenia) {
+        .then((result) => {
+          
+          if (result != null) {
+                  let pass = req.body.contrasenia;
+                    let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)
+                    if (claveCorrecta) {
                         /* poner en session */
 
                         req.session.user = result.dataValues;
-                    
+                        if (req.body.recordarme != undefined) {
+                            res.cookie('userId', result.id, {maxAge: 1000 * 60 * 15});
+                        }
+                       
                         return res.redirect('/productos/all');
 
                     } else {
@@ -68,8 +71,35 @@ const userController = {
           });
       },
     editar: (req, res) => {
-        return res.render('profile-edit')
-    }
+    let id = req.params.id;
+    user.findByPk(id)
+      .then((result) => {
+        console.log(result);
+        return res.render("profile-edit", { user: result });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    },
+    actualizar: (req, res) => {
+        let id = req.params.id;
+        let data = req.body;
+        user.update(data, {
+            where: [{ id: id }],
+          })
+          .then((result) => {
+            return res.redirect("/users/profile/" + id);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      },
+      logout: (req, res) => {
+        res.clearCookie('userId');
+        req.session.user = req.locals.user
+        req.locals.user = undefined
+        return res.redirect('/users/login');
+    },
 };
 
 module.exports = userController;

@@ -47,6 +47,7 @@ module.exports = function (sequelize, dataTypes) {
         
         Producto.hasMany(models.Comentario, {
             as: "comentario",
+            onDelete: 'CASCADE',
             foreignKey: "idPost"
         })
     };
