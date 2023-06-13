@@ -1,5 +1,6 @@
 const db = require('../database/models');
 const productos = db.Producto;
+const comentarios = db.Comentario;
 let op = db.Sequelize.Op;
 
 
@@ -99,6 +100,25 @@ const productosController = {
         console.log(err);
       });
   },
+  agregarComent: (req, res) => {
+   let id = req.params.id
+   let info = {
+    comentarios: req.body.comentario,
+    idUsuario: req.session.user.id,
+    idPost: id,
+    }
+    if ( info.comentarios == '') {
+      res.redirect('productos/detalle-productos/'+ id)
+    } else{
+      comentarios.create(info)
+            .then(function (result) {
+                return res.redirect('/productos/detalle-productos/'+ id);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+          }
+  }
 };
 
 

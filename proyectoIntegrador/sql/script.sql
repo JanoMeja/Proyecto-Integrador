@@ -46,11 +46,11 @@ updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
  
  -- usarios
- INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'aguscarmanp@gmail.com','Agustin' ,'Agus0506', '/images/perfil.jpg', '2000-02-22', '42372582');
- INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'esuarez@gmail.com','Emiliano', 'SuarezLuis12', '/images/perfil.jpg', '2023-04-06', '45293032');
- INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni) VALUES (default, 'janomeja@gmail.com','Jano', 'Janocrack','/images/perfil.jpg', '2023-07-10', '45234321');
- INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni) VALUES (default, 'juanitocazares@gmail.com', 'Juanito','Jcazares2112', '/images/perfil.jpg', '2002-01-02', '43565071');
- INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'pulpogonzales@gmail.com', 'Diego','Ggonzales', '/images/perfil.jpg', '2021-02-04', '46738405');
+ INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'aguscarmanp@gmail.com','Agustin' ,'Agus0506', '/images/agus.jpg', '2000-02-22', '42372582');
+ INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'esuarez@gmail.com','Emiliano', 'SuarezLuis12', '/images/seniol.jpg', '2023-04-06', '45293032');
+ INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni) VALUES (default, 'janomeja@gmail.com','Jano', 'Janocrack','/images/jano.jpg', '2023-07-10', '45234321');
+ INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni) VALUES (default, 'juanitocazares@gmail.com', 'Juanito','Jcazares2112', '/images/juanito.jpg', '2002-01-02', '43565071');
+ INSERT INTO usuarios (id, email, usuario, contrasenia, fotoDePerfil, fecha, dni)  VALUES (default, 'pulpogonzales@gmail.com', 'Diego','Ggonzales', '/images/pulpo.jpg', '2021-02-04', '46738405');
  
 -- posteos
 INSERT INTO productos (id, userId, nombre, descripcion, img) VALUES (default,1,'Camiseta Argentina Suplente Final Mundial 1990', 'Diego Armando Maradona #10', '/images/dam.jpg');
