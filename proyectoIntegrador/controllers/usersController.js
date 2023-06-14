@@ -34,7 +34,7 @@ const userController = {
           
           if (result != null) {
                   let pass = req.body.contrasenia;
-                    let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)
+                  let claveCorrecta = bcrypt.compareSync(pass, result.contrasenia)
                     if (claveCorrecta) {
                         /* poner en session */
 
@@ -102,9 +102,8 @@ const userController = {
           });
       },
       logout: (req, res) => {
+        req.session.destroy()
         res.clearCookie('userId');
-        req.session.user = req.locals.user
-        req.locals.user = undefined
         return res.redirect('/users/login');
     },
 };
