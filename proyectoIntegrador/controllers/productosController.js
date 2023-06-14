@@ -102,14 +102,16 @@ const productosController = {
   },
   agregarComent: (req, res) => {
    let id = req.params.id
-   let info = {
-    comentarios: req.body.comentario,
-    idUsuario: req.session.user.id,
-    idPost: id,
-    }
-    if ( info.comentarios == '') {
+   
+    if ( req.body.comentario == '') {
       res.redirect('productos/detalle-productos/'+ id)
     } else{
+      if (req.session.user != null) { 
+        let info = {
+          comentarios: req.body.comentario,
+          idUsuario: req.session.user.id,
+          idPost: id,
+          }
       comentarios.create(info)
             .then(function (result) {
                 return res.redirect('/productos/detalle-productos/'+ id);
@@ -118,6 +120,10 @@ const productosController = {
                 console.log(error);
             });
           }
+          else { 
+            return res.redirect('/users/login')
+          }
+    }
   }
 };
 

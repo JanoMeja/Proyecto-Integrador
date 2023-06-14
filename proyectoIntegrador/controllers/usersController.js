@@ -72,6 +72,7 @@ const userController = {
       },
     editar: (req, res) => {
     let id = req.params.id;
+    if (req.session.user != null) { 
     user.findByPk(id)
       .then((result) => {
         console.log(result);
@@ -80,6 +81,9 @@ const userController = {
       .catch((err) => {
         console.log(err);
       });
+    } else {
+      return res.redirect('/users/login')
+    }
     },
     actualizar: (req, res) => {
         let id = req.params.id;
