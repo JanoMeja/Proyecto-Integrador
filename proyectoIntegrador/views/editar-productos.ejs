@@ -12,7 +12,7 @@
                 <!-- Show the "ultimos" products -->
                 <form action="/productos/update/<%= producto.id %>" method="post" class="registro">
                     <label for="imagen">Imagen:</label>
-                    <input type="file" id="archivo" name="img" accept=".pdf,.doc,.docx,.jpg" value="<%= producto.img %>">
+                    <input type="text" id="img" name="img" value="<%= producto.img %>">
 
                     <label for="usuario">Nombre del Producto:</label>
                     <input type="text" id="usuario" name="nombre" value="<%= producto.nombre %>"><br><br>
