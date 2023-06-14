@@ -60,7 +60,10 @@ const userController = {
     },
     perfil: (req, res) => {
         let id = req.params.id; 
-        user.findByPk(id)
+        let criterio = {
+          include: [{association: 'producto'}, {association: 'comentario'}]
+        };
+        user.findByPk(id, criterio)
           .then(function (result) {
             return res.render("profile", {
               usuario: result,
