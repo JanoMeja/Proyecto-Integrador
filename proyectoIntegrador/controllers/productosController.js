@@ -66,7 +66,8 @@ const productosController = {
   },
   formActualizado: (req, res) => {
     let id = req.params.id;
-    productos.findByPk(id)
+    if (req.session.user != null) {
+      productos.findByPk(id)
       .then((result) => {
         console.log(result);
         return res.render("editar-productos", { producto: result });
@@ -74,10 +75,14 @@ const productosController = {
       .catch((err) => {
         console.log(err);
       });
+    } else {
+      return res.redirect('/users/login')
+    }
   },
   actualizar: (req, res) => {
     let id = req.params.id;
     let data = req.body;
+    
     productos.update(data, {
         where: [{ id: id }],
       })
@@ -90,7 +95,8 @@ const productosController = {
   },
   eliminar: (req, res) => {
     let idDelete = req.body.id;
-    productos.destroy({
+    if (req.session.user != null) {
+      productos.destroy({
         where: [{ id: idDelete }],
       })
       .then((result) => {
@@ -99,6 +105,10 @@ const productosController = {
       .catch((err) => {
         console.log(err);
       });
+    } else {
+      return res.redirect('/users/login')
+    }
+    
   },
   agregarComent: (req, res) => {
    let id = req.params.id
