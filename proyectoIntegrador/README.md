@@ -3,3 +3,4 @@ Borramos el boton de eliminar porque cuando eliminas un producto, este tiene rel
 mis electivas:
 1) Editar datos del usuario
 2) Comentarios ocultar formulario
+3) Imagen de perfil
