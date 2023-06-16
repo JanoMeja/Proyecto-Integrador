@@ -53,10 +53,9 @@ const productosController = {
   },
   formActualizado: (req, res) => {
     let id = req.params.id;
-    if (req.session.user != null) {
+    if (req.session.user != null ) {
       productos.findByPk(id)
       .then((result) => {
-        console.log(result);
         return res.render("editar-productos", { producto: result });
       })
       .catch((err) => {

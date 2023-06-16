@@ -15,23 +15,23 @@
                                         <ul>
                                             <h1 class="main-title">
                                                 <%= usuario.nombre %>
-                                                    <a class="btn btnUpdate" href="/users/profile-edit/<%= usuario.id %>">
-                                                        <i class="fas fa-cog"></i>
-                                                    </a>
+                                            
                                             </h1>
                                             <h3>
                                                 <%= usuario.email %>
                                             </h3>
                                         </ul>
                                         <a class="btn mt-3 ml-4" href="">SEGUIR</a>
-                                    </div>
+                                    </div><br>
                                     <div>
                                         <ul class="">
                                             <li>Productos cargados : <%= usuario.producto.length %></li>
                                         </ul>
-                                    </div>
+                                    </div><br><br>
                                     <div>
-                                        <a class="btn btnUpdate" href="/users/profile-edit/<%= usuario.id %> ">Editar</a>
+                                        <% if (locals.user && locals.user.id === usuario.id) { %>
+                                            <a class="btn btnUpdate" href="/users/profile-edit/<%= usuario.id %>">Editar</a>
+                                        <% } %>
                                     </div>
                                 </div>
                             </div>

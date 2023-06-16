@@ -12,12 +12,16 @@
                     </h2>
                     <div class="sectionUpdate">
                         <div>
+                        <% if (locals.user && locals.user.id === producto.usuarios.id) { %>
                           <a class="btn btnUpdate"  href="/productos/update/<%= producto.id %> ">Editar</a>
+                        <% } %>
                         </div>
+                        <% if (locals.user && locals.user.id === producto.usuarios.id) { %>
                         <form action="/productos/delete" method="POST">
                             <input type="text" hidden name="id" id="" value="<%= producto.id %>">
                             <input class="btn btnDelete" value="Eliminar" type="submit">
                         </form>
+                        <% } %>
                     </div>
                 </div>
                 <div class="product-detail">
