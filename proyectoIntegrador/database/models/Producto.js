@@ -39,12 +39,12 @@ module.exports = function (sequelize, dataTypes) {
 
     /* Crear relaciones */
     Producto.associate = function (models) {
-         Producto.belongsTo(models.Usuario, {
-             as: "usuarios",
-             foreignKey: "userId"
+        Producto.belongsTo(models.Usuario, {
+            as: "usuarios",
+            foreignKey: "userId"
 
-         })
-        
+        })
+
         Producto.hasMany(models.Comentario, {
             as: "comentario",
             onDelete: 'CASCADE',

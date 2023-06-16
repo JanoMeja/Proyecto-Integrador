@@ -1,23 +1,23 @@
 module.exports = function (sequelize, dataTypes) {
-    
+
     let alias = "Comentario";
-    
-    let cols  = {
-        id:{
-            AutoIncrement : true,
+
+    let cols = {
+        id: {
+            AutoIncrement: true,
             primaryKey: true,
-            type:dataTypes.INTEGER
+            type: dataTypes.INTEGER
         },
-        idPost:{
-            type:dataTypes.INTEGER
+        idPost: {
+            type: dataTypes.INTEGER
         },
-        idUsuario:{
-            type:dataTypes.INTEGER
+        idUsuario: {
+            type: dataTypes.INTEGER
         },
-        comentarios:{
-            type:dataTypes.STRING
+        comentarios: {
+            type: dataTypes.STRING
         },
-        createdAT:{
+        createdAT: {
             type: dataTypes.DATE,
             allownull: true
         },
@@ -35,17 +35,17 @@ module.exports = function (sequelize, dataTypes) {
 
     const Comentario = sequelize.define(alias, cols, config);
 
-     Comentario.associate = function(models) {
-         Comentario.belongsTo(models.Usuario , {
+    Comentario.associate = function (models) {
+        Comentario.belongsTo(models.Usuario, {
             as: "usuarios",
-            foreignKey : "idUsuario"
-            
-        }) 
+            foreignKey: "idUsuario"
+
+        })
         Comentario.belongsTo(models.Producto, {
             as: "producto",
             onDelete: 'CASCADE',
             foreignKey: "idPost"
-            })
-         }; 
+        })
+    };
     return Comentario;
 }

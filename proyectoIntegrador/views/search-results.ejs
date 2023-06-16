@@ -1,25 +1,30 @@
 <%- include('./partials/head') %>
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
-<div class="container products-wrapper">
-    <div class="row">
-        <% if ( listaProductos.length > 0) { %>
-            <% for (let i = 0; i < listaProductos.length; i++) { %>
-                <div class="col-12">
-                    <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
-                        <h2 class="products-title"><%= listaProductos[i].nombre %></h2>
-                        <figure class="product-box_image">
-                            <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%" class="tamano">
-                        </figure>
-                    </a>
-                </div>
-            <% } %>
-        <% } else { %>
-            <h1><%= mensaje %> </h1>
-        <% } %>
-    </div>
-</div>
-        <%- include('./partials/footer') %>
+    <% if (locals.user) { %>
+        <%- include('./partials/headerLogueado') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
+                    <% } %>
+                        <div class="container products-wrapper">
+                            <div class="row">
+                                <% if ( listaProductos.length> 0) { %>
+                                    <% for (let i=0; i < listaProductos.length; i++) { %>
+                                        <div class="col-12">
+                                            <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
+                                                <h2 class="products-title">
+                                                    <%= listaProductos[i].nombre %>
+                                                </h2>
+                                                <figure class="product-box_image">
+                                                    <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%"
+                                                        class="tamano">
+                                                </figure>
+                                            </a>
+                                        </div>
+                                        <% } %>
+                                            <% } else { %>
+                                                <h1>
+                                                    <%= mensaje %>
+                                                </h1>
+                                                <% } %>
+                            </div>
+                        </div>
+                        <%- include('./partials/footer') %>

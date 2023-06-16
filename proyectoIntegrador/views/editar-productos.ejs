@@ -1,30 +1,33 @@
 <%- include('./partials/head') %>
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
-        <div class="container products-wrapper">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="products-title">Editar productos</h2>
-                </div>
-                <!-- Show the "ultimos" products -->
-                <form action="/productos/update/<%= producto.id %>" method="post" class="registro">
-                    <label for="imagen">Imagen:</label>
-                    <input type="text" id="img" name="img" value="<%= producto.img %>">
+    <% if (locals.user) { %>
+        <%- include('./partials/headerLogueado') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
+                    <% } %>
+                        <div class="container products-wrapper">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="products-title">Editar productos</h2>
+                                </div>
+                                <!-- Show the "ultimos" products -->
+                                <form action="/productos/update/<%= producto.id %>" method="post" class="registro">
+                                    <label for="imagen">Imagen:</label>
+                                    <input type="text" id="img" name="img" value="<%= producto.img %>">
 
-                    <label for="usuario">Nombre del Producto:</label>
-                    <input type="text" id="usuario" name="nombre" value="<%= producto.nombre %>"><br><br>
+                                    <label for="usuario">Nombre del Producto:</label>
+                                    <input type="text" id="usuario" name="nombre"
+                                        value="<%= producto.nombre %>"><br><br>
 
-                    <label for="descripcion">Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion" value="<%= producto.descripcion %>"><br><br>
+                                    <label for="descripcion">Descripción:</label>
+                                    <input type="text" id="descripcion" name="descripcion"
+                                        value="<%= producto.descripcion %>"><br><br>
 
-                    <label for="fecha_carga">Fecha de carga:</label>
-                    <input type="date" id="fecha_carga" name="cratedAT" value="<%= producto.createdAT %>"><br><br>
+                                    <label for="fecha_carga">Fecha de carga:</label>
+                                    <input type="date" id="fecha_carga" name="cratedAT"
+                                        value="<%= producto.createdAT %>"><br><br>
 
-                    <input type="submit" value="Editar Producto">
-                </form>
-            </div>
-        </div>
-        <%- include('./partials/footer') %>
+                                    <input type="submit" value="Editar Producto">
+                                </form>
+                            </div>
+                        </div>
+                        <%- include('./partials/footer') %>

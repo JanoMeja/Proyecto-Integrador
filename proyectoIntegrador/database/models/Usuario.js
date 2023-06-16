@@ -1,6 +1,6 @@
 module.exports = function (sequelize, dataTypes) {
     let alias = "Usuario";
-    
+
     let cols = {
         id: {
             autoIncrement: true,
@@ -8,22 +8,22 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.INTEGER,
         },
         email: {
-                type: dataTypes.STRING,
+            type: dataTypes.STRING,
         },
         usuario: {
-                type: dataTypes.STRING,
+            type: dataTypes.STRING,
         },
         contrasenia: {
-                type: dataTypes.STRING(500),
+            type: dataTypes.STRING(500),
         },
         fotoDePerfil: {
-                type: dataTypes.STRING,
+            type: dataTypes.STRING,
         },
         fecha: {
-                type: dataTypes.DATE,
+            type: dataTypes.DATE,
         },
         dni: {
-                type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER,
         },
 
     };
@@ -34,18 +34,18 @@ module.exports = function (sequelize, dataTypes) {
     };
 
     const Usuario = sequelize.define(alias, cols, config);
-    
-    Usuario.associate = function(models) {
-        
-         Usuario.hasMany(models.Producto , {
-             as: "producto",
-             foreignKey : "userId"
-             }),
-        Usuario.hasMany(models.Comentario , {
-            as: "comentario",
-            foreignKey : "idUsuario"
+
+    Usuario.associate = function (models) {
+
+        Usuario.hasMany(models.Producto, {
+            as: "producto",
+            foreignKey: "userId"
+        }),
+            Usuario.hasMany(models.Comentario, {
+                as: "comentario",
+                foreignKey: "idUsuario"
             })
-        }; 
+    };
 
 
     return Usuario;

@@ -1,5 +1,5 @@
 /* requerir los modulos */
-const express = require ("express");
+const express = require("express");
 const router = express.Router();
 const productosController = require('../controllers/productosController');
 
@@ -9,8 +9,8 @@ router.get('/all', productosController.findAll);
 router.get('/detalle-productos/:id', productosController.detalle);
 router.post("/detalle-productos/:id", productosController.agregarComent);
 
-router.get('/aniadir',productosController.Form);
-router.post('/aniadir',productosController.guardar);
+router.get('/aniadir', productosController.Form);
+router.post('/aniadir', productosController.guardar);
 
 /* Mostrar Form para Actualizar movie */
 router.get("/update/:id", productosController.formActualizado);

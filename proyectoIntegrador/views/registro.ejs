@@ -1,31 +1,31 @@
 <%- include('./partials/head') %>
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
+    <% if (locals.user) { %>
+        <%- include('./partials/headerLogueado') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
+                    <% } %>
 
-        <body>
-            <form action="/users/registro" method="post" class="registro">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                        <body>
+                            <form action="/users/registro" method="post" class="registro">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required><br><br>
 
-                <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required><br><br>
+                                <label for="usuario">Usuario:</label>
+                                <input type="text" id="usuario" name="usuario" required><br><br>
 
-                <label for="contraseña">Contraseña:</label>
-                <input type="password" id="contraseña" name="contrasenia" required><br><br>
+                                <label for="contraseña">Contraseña:</label>
+                                <input type="password" id="contraseña" name="contrasenia" required><br><br>
 
-                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                <input type="date" id="fecha_nacimiento" name="fecha" required><br><br>
+                                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                                <input type="date" id="fecha_nacimiento" name="fecha" required><br><br>
 
-                <label for="nro_documento">Número de documento:</label>
-                <input type="number" id="nro_documento" name="dni" required><br><br>
+                                <label for="nro_documento">Número de documento:</label>
+                                <input type="number" id="nro_documento" name="dni" required><br><br>
 
-                <label for="foto-de-perfil">Foto de perfil:</label>
-                <input type="text" id="foto-de-perfil" name="fotoDePerfil"><br><br>
+                                <label for="foto-de-perfil">Foto de perfil:</label>
+                                <input type="text" id="foto-de-perfil" name="fotoDePerfil"><br><br>
 
-                <input type="submit" value="Enviar">
-            </form>
-        </body>
-        <%- include('./partials/footer') %>
+                                <input type="submit" value="Enviar">
+                            </form>
+                        </body>
+                        <%- include('./partials/footer') %>

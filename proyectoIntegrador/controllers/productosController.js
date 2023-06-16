@@ -8,11 +8,11 @@ const productosController = {
   findAll: (req, res) => {
     let criterio = {
       order: [['createdAT', 'DESC']],
-      include: [{association: 'comentario'},{association: 'usuarios'}]
+      include: [{ association: 'comentario' }, { association: 'usuarios' }]
     };
     productos.findAll(criterio)
       .then(function (resultado) {
-        
+
         return res.render("productos", { listaProductos: resultado });
       }).catch(function (err) {
         console.log(err);
@@ -20,13 +20,13 @@ const productosController = {
 
   },
   detalle: (req, res) => {
-    let id = req.params.id; 
+    let id = req.params.id;
     let rel = {
-     include: [
-      {association: 'comentario', include: [{association: "usuarios"}]},
-      { association: "usuarios" }
-    ]
-  }
+      include: [
+        { association: 'comentario', include: [{ association: "usuarios" }] },
+        { association: "usuarios" }
+      ]
+    }
     productos.findByPk(id, rel)
       .then(function (result) {
         return res.render("detalle-productos", {
@@ -43,7 +43,7 @@ const productosController = {
   guardar: (req, res) => {
     let info = req.body;
     info.userId = req.session.user.id
-      productos.create(info)
+    productos.create(info)
       .then((result) => {
         return res.redirect("/productos/all");
       })
@@ -53,14 +53,14 @@ const productosController = {
   },
   formActualizado: (req, res) => {
     let id = req.params.id;
-    if (req.session.user != null ) {
+    if (req.session.user != null) {
       productos.findByPk(id)
-      .then((result) => {
-        return res.render("editar-productos", { producto: result });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((result) => {
+          return res.render("editar-productos", { producto: result });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       return res.redirect('/users/login')
     }
@@ -68,10 +68,10 @@ const productosController = {
   actualizar: (req, res) => {
     let id = req.params.id;
     let data = req.body;
-    
+
     productos.update(data, {
-        where: [{ id: id }],
-      })
+      where: [{ id: id }],
+    })
       .then((result) => {
         return res.redirect("/productos/detalle-productos/" + id);
       })
@@ -85,40 +85,40 @@ const productosController = {
       productos.destroy({
         where: [{ id: idDelete }],
       })
-      .then((result) => {
-        return res.redirect("/productos/all");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((result) => {
+          return res.redirect("/productos/all");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       return res.redirect('/users/login')
     }
-    
+
   },
   agregarComent: (req, res) => {
-   let id = req.params.id
-   
-    if ( req.body.comentario == '') {
-      res.redirect('productos/detalle-productos/'+ id)
-    } else{
-      if (req.session.user != null) { 
+    let id = req.params.id
+
+    if (req.body.comentario == '') {
+      res.redirect('productos/detalle-productos/' + id)
+    } else {
+      if (req.session.user != null) {
         let info = {
           comentarios: req.body.comentario,
           idUsuario: req.session.user.id,
           idPost: id,
-          }
-      comentarios.create(info)
-            .then(function (result) {
-                return res.redirect('/productos/detalle-productos/'+ id);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-          }
-          else { 
-            return res.redirect('/users/login')
-          }
+        }
+        comentarios.create(info)
+          .then(function (result) {
+            return res.redirect('/productos/detalle-productos/' + id);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+      else {
+        return res.redirect('/users/login')
+      }
     }
   }
 };

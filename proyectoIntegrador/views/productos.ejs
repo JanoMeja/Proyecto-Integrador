@@ -1,55 +1,63 @@
 <%- include('./partials/head') %>
 
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
-        <div class="container products-wrapper">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="products-title">Novedades</h2>
-                </div>
-                <!-- Show the "ultimos" products -->
-                <% for( let i=0; i< 5; i++ ) { %>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <section class="product-box">
-                            <a href="/productos/detalle-productos/<%= listaProductos[i].id %>" >
-                                <figure class="product-box_image">
-                                    <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%" class="tamano">
-                                </figure>
-                                <article class="product-box_data">
-                                    <h3 class="text">
-                                      <p>Nombre:</p>  <%= listaProductos[i].nombre %>
-                                      <p>Descrpcion:</p>  <%= listaProductos[i].descripcion %>
-                                      <p>Dueño:</p>   <%= listaProductos[i].usuarios.usuario %>
-                                    </h3>
-                                </article>
-                            </a>
-                        </section>
-                    </div>
+    <% if (locals.user) { %>
+        <%- include('./partials/headerLogueado') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
                     <% } %>
-                        <div class="col-12">
-                            <h2 class="products-title">Mas Comentadas</h2>
-                        </div>
-                        <% for( let i=5;i< listaProductos.length; i++ ) { %>
-                            <div class="col-12 col-sm-6 col-lg-3">
-                                <section class="product-box">
-                                    <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
-                                        <figure class="product-box_image">
-                                            <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%" class="tamano">
-                                        </figure>
-                                        <article class="product-box_data">
-                                            <h3 class="text">
-                                                <p>Nombre:</p>  <%= listaProductos[i].nombre %>
-                                                <p>Descrpcion:</p>  <%= listaProductos[i].descripcion %>
-                                                <p>Dueño:</p> <a href="/users/profile"></a>  <%= listaProductos[i].usuarios.email %>
-                                            </h3>
-                                        </article>
-                                    </a>
-                                </section>
+                        <div class="container products-wrapper">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="products-title">Novedades</h2>
+                                </div>
+                                <!-- Show the "ultimos" products -->
+                                <% for( let i=0; i< 5; i++ ) { %>
+                                    <div class="col-12 col-sm-6 col-lg-3">
+                                        <section class="product-box">
+                                            <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
+                                                <figure class="product-box_image">
+                                                    <img src="<%= listaProductos[i].img %>" alt="imagen" width="100%"
+                                                        class="tamano">
+                                                </figure>
+                                                <article class="product-box_data">
+                                                    <h3 class="text">
+                                                        <p>Nombre:</p>
+                                                        <%= listaProductos[i].nombre %>
+                                                            <p>Descrpcion:</p>
+                                                            <%= listaProductos[i].descripcion %>
+                                                                <p>Dueño:</p>
+                                                                <%= listaProductos[i].usuarios.usuario %>
+                                                    </h3>
+                                                </article>
+                                            </a>
+                                        </section>
+                                    </div>
+                                    <% } %>
+                                        <div class="col-12">
+                                            <h2 class="products-title">Mas Comentadas</h2>
+                                        </div>
+                                        <% for( let i=5;i< listaProductos.length; i++ ) { %>
+                                            <div class="col-12 col-sm-6 col-lg-3">
+                                                <section class="product-box">
+                                                    <a href="/productos/detalle-productos/<%= listaProductos[i].id %>">
+                                                        <figure class="product-box_image">
+                                                            <img src="<%= listaProductos[i].img %>" alt="imagen"
+                                                                width="100%" class="tamano">
+                                                        </figure>
+                                                        <article class="product-box_data">
+                                                            <h3 class="text">
+                                                                <p>Nombre:</p>
+                                                                <%= listaProductos[i].nombre %>
+                                                                    <p>Descrpcion:</p>
+                                                                    <%= listaProductos[i].descripcion %>
+                                                                        <p>Dueño:</p> <a href="/users/profile"></a>
+                                                                        <%= listaProductos[i].usuarios.email %>
+                                                            </h3>
+                                                        </article>
+                                                    </a>
+                                                </section>
+                                            </div>
+                                            <% } %>
                             </div>
-                            <% } %>
-            </div>
-        </div>
-        <%- include('./partials/footer') %>
+                        </div>
+                        <%- include('./partials/footer') %>

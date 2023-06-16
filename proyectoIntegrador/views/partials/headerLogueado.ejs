@@ -35,9 +35,10 @@
 			</ul>
 			<ul class="right-navbar">
 
-					<a href="/users/profile/<%= locals.user.id  %>">
-						<p>Bienvenido <%= locals.user.usuario %></p> <i class="fas fa-user"></i>
-					</a>
+				<a href="/users/profile/<%= locals.user.id  %>">
+					<p>Bienvenido <%= locals.user.usuario %>
+					</p> <i class="fas fa-user"></i>
+				</a>
 				<li>
 					<form action="/users/logout" method="get">
 						<button class="logout" type="submit">
@@ -49,4 +50,4 @@
 		</nav>
 	</div>
 </header>
-	<!-- /Header -->
+<!-- /Header -->

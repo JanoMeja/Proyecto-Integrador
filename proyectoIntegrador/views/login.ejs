@@ -1,23 +1,24 @@
 <%- include('./partials/head') %>
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
-		<body>
-			<h1 class="centro">Login</h1>
-			<form action="/users/login" method="post" id="login-form" class="login">
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required><br><br>
+	<% if (locals.user) { %>
+		<%- include('./partials/headerLogueado') %>
+			<% } else { %>
+				<%- include('./partials/header') %>
+					<% } %>
 
-				<label for="contraseña">Contraseña:</label>
-				<input type="password" id="contraseña" name="contrasenia" required><br><br>
+						<body>
+							<h1 class="centro">Login</h1>
+							<form action="/users/login" method="post" id="login-form" class="login">
+								<label for="email">Email:</label>
+								<input type="email" id="email" name="email" required><br><br>
 
-				<input type="checkbox" id="recordarme" name="recordarme" value="1">
-				<label for="checkbox1">Recordarme</label>
+								<label for="contraseña">Contraseña:</label>
+								<input type="password" id="contraseña" name="contrasenia" required><br><br>
 
-				<input type="submit" value="Ingresar">
-			</form>
-			<p class="centro">No tenes cuenta? <a href="/users/registro">Registrate</a></p>
-		</body>
-		<%- include('./partials/footer') %>
+								<input type="checkbox" id="recordarme" name="recordarme" value="1">
+								<label for="checkbox1">Recordarme</label>
+
+								<input type="submit" value="Ingresar">
+							</form>
+							<p class="centro">No tenes cuenta? <a href="/users/registro">Registrate</a></p>
+						</body>
+						<%- include('./partials/footer') %>

@@ -1,35 +1,35 @@
 <%- include('./partials/head') %>
-<% if (locals.user) { %>
-    <%- include('./partials/headerLogueado') %>
-  <% } else { %>
-    <%- include('./partials/header') %>
-<% } %>
-        <div class="container products-wrapper">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="products-title">Editar mi perfil</h2>
-                </div>
-                <!-- Show the "ultimos" products -->
-                <h2 class="col-12">
-                    Editar Perfil:
-                </h2>
-                <form action="/users/profile-edit/<%= user.id %>" method="post" class="registro">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email"><br><br>
+    <% if (locals.user) { %>
+        <%- include('./partials/headerLogueado') %>
+            <% } else { %>
+                <%- include('./partials/header') %>
+                    <% } %>
+                        <div class="container products-wrapper">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="products-title">Editar mi perfil</h2>
+                                </div>
+                                <!-- Show the "ultimos" products -->
+                                <h2 class="col-12">
+                                    Editar Perfil:
+                                </h2>
+                                <form action="/users/profile-edit/<%= user.id %>" method="post" class="registro">
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email"><br><br>
 
-                    <label for="usuario">Usuario:</label>
-                    <input type="text" id="usuario" name="usuario"><br><br>
+                                    <label for="usuario">Usuario:</label>
+                                    <input type="text" id="usuario" name="usuario"><br><br>
 
-                    <label for="contraseña">Contraseña:</label>
-                    <input type="password" id="contraseña" name="contrasenia"><br><br>
+                                    <label for="contraseña">Contraseña:</label>
+                                    <input type="password" id="contraseña" name="contrasenia"><br><br>
 
-                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-                    <input type="date" id="fecha_nacimiento" name="fecha"><br><br>
+                                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                                    <input type="date" id="fecha_nacimiento" name="fecha"><br><br>
 
-                    <label for="nro_documento">Número de documento:</label>
-                    <input type="number" id="nro_documento" name="dni"><br><br>
-                    <input type="submit" value="Editar">
-                </form>
-            </div>
-        </div>
-        <%- include('./partials/footer') %>
+                                    <label for="nro_documento">Número de documento:</label>
+                                    <input type="number" id="nro_documento" name="dni"><br><br>
+                                    <input type="submit" value="Editar">
+                                </form>
+                            </div>
+                        </div>
+                        <%- include('./partials/footer') %>
