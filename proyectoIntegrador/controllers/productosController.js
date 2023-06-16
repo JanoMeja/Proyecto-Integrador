@@ -21,10 +21,12 @@ const productosController = {
   },
   detalle: (req, res) => {
     let id = req.params.id; 
-    let rel =  {
-      include: { association: "comentario",
-      include: {association: "usuario"} }
-    };
+    let rel = {
+     include: [
+      {association: 'comentario', include: [{association: "usuarios"}]},
+      { association: "usuarios" }
+    ]
+  }
     productos.findByPk(id, rel)
       .then(function (result) {
         return res.render("detalle-productos", {
