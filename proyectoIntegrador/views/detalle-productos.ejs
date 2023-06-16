@@ -48,13 +48,16 @@
                                         </article>
                                         <% } %>
                                     </section>
-                            
+                            <% if (locals.user != null) { %>
                                         <form class="form" action="/productos/detalle-productos/<%= producto.id %>" method="POST">
                                             <input class="form-input" type="text" name="comentario" value=""
                                                 placeholder="Agregar comentario">
                                             <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                                         </form>
-                                        <hr>
+                                 <% } else { %>
+									<p class="buy-now-button"> Logueese para comentar</p>
+							<% } %>
+
                             </div> 
                           
                     </div>
