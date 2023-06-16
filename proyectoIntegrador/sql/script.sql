@@ -5,13 +5,13 @@ USE proyecto;
 -- tabla usario
 create table usuarios (
 -- nombre        tipo         restriccion  
-id               int         unsigned primary key  auto_increment,
+id               int             unsigned primary key  auto_increment,
 email            varchar(200)    not null,
 usuario          varchar(200)    not null,
-contrasenia       varchar(500)   not null,
-fotoDePerfil   varchar(500)      null,
+contrasenia      varchar(500)    not null,
+fotoDePerfil     varchar(800)    null,
 fecha            date,
-dni              int            not null,
+dni              int             not null,
 createdAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -23,7 +23,7 @@ id              int           unsigned primary key  auto_increment,
 userId         int           unsigned not null,  
 nombre          varchar(250)  not null,
 descripcion     varchar(500)  not null,
-img      		varchar(500)  not null,
+img      		varchar(800)  not null,
 FOREIGN KEY (userId)  REFERENCES usuarios(id),
 
 createdAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
