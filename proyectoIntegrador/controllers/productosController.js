@@ -37,21 +37,6 @@ const productosController = {
         console.log(error);
       });
   },
-  resultado: (req, res) => {
-    let busqueda = req.query.search;
-
-    productos.findAll({
-        where: [
-          { nombre: { [op.like]: "%" + busqueda + "%" } },
-        ],
-      })
-      .then(function (result) {
-        return res.render("search-results", { listaProductos: result });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  },
   Form: (req, res) => {
     return res.render("aniadir-productos");
   },

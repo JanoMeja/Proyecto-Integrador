@@ -9,8 +9,6 @@ router.get('/all', productosController.findAll);
 router.get('/detalle-productos/:id', productosController.detalle);
 router.post("/detalle-productos/:id", productosController.agregarComent);
 
-router.get('/search-results', productosController.resultado);
-
 router.get('/aniadir',productosController.Form);
 router.post('/aniadir',productosController.guardar);
 
